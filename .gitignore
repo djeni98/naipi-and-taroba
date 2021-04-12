@@ -1,2 +1,5 @@
 *.swp
 .DS_Store
+PlaygroundBook.xcodeproj/project.xcworkspace
+PlaygroundBook.xcodeproj/xcuserdata
+
