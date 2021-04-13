@@ -63,7 +63,7 @@ let height = 600 * 2
 
 let sceneView = SKView(frame: CGRect(x:0 , y:0, width: width, height: height))
 
-var scene = Scenes(size: CGSize(width: width, height: height))
+var scene = Scene5(size: CGSize(width: width, height: height))
 scene.scaleMode = .aspectFit
 sceneView.presentScene(scene)
 

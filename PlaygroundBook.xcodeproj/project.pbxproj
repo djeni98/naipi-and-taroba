@@ -24,8 +24,6 @@
 		5EF2F97C2054B6E400191409 /* ManifestPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5EF2F97E2054B6E400191409 /* ManifestPlist.strings */; };
 		5EF2F9AE2054BBF300191409 /* LiveViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EF2F9AD2054BBF300191409 /* LiveViewController.swift */; };
 		5EF2F9B72054E6FB00191409 /* Chapters in Copy Book Contents */ = {isa = PBXBuildFile; fileRef = 5EF2F9B62054E6F900191409 /* Chapters */; };
-		B707A50026225812008E17EA /* take-1 in Resources */ = {isa = PBXBuildFile; fileRef = B707A4FF26225812008E17EA /* take-1 */; };
-		B707A50526225821008E17EA /* take-4 in Resources */ = {isa = PBXBuildFile; fileRef = B707A50426225821008E17EA /* take-4 */; };
 		B78D7F8A262330AB008CB9C5 /* cena-2 in Resources */ = {isa = PBXBuildFile; fileRef = B78D7F89262330AB008CB9C5 /* cena-2 */; };
 		B78D7F8F262365A5008CB9C5 /* Scene2.swift in Sources */ = {isa = PBXBuildFile; fileRef = B78D7F8E262365A5008CB9C5 /* Scene2.swift */; };
 		B78D7F9426237138008CB9C5 /* cena-3 in Resources */ = {isa = PBXBuildFile; fileRef = B78D7F9326237138008CB9C5 /* cena-3 */; };
@@ -35,6 +33,9 @@
 		B7B3D09A262269D0002EE21B /* Scene4.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7B3D099262269D0002EE21B /* Scene4.swift */; };
 		B7B3D0A5262291AB002EE21B /* cena-1 in Resources */ = {isa = PBXBuildFile; fileRef = B7B3D0A4262291AA002EE21B /* cena-1 */; };
 		B7B3D0AA262291C3002EE21B /* cena-4 in Resources */ = {isa = PBXBuildFile; fileRef = B7B3D0A9262291C3002EE21B /* cena-4 */; };
+		B7CD46B226248A8C00351DC3 /* Scene5.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7CD46B126248A8C00351DC3 /* Scene5.swift */; };
+		B7CD46B72624911500351DC3 /* cena-5 in Resources */ = {isa = PBXBuildFile; fileRef = B7CD46B62624911500351DC3 /* cena-5 */; };
+		B7CD46BC262522BA00351DC3 /* cena-6 in Resources */ = {isa = PBXBuildFile; fileRef = B7CD46BB262522BA00351DC3 /* cena-6 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXBuildRule section */
@@ -157,8 +158,6 @@
 		5EF2F9AD2054BBF300191409 /* LiveViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveViewController.swift; sourceTree = "<group>"; };
 		5EF2F9B62054E6F900191409 /* Chapters */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Chapters; sourceTree = "<group>"; };
 		B707A4FB26225582008E17EA /* Scenes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Scenes.swift; sourceTree = "<group>"; };
-		B707A4FF26225812008E17EA /* take-1 */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "take-1"; sourceTree = "<group>"; };
-		B707A50426225821008E17EA /* take-4 */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "take-4"; sourceTree = "<group>"; };
 		B78D7F89262330AB008CB9C5 /* cena-2 */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "cena-2"; sourceTree = "<group>"; };
 		B78D7F8E262365A5008CB9C5 /* Scene2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Scene2.swift; sourceTree = "<group>"; };
 		B78D7F9326237138008CB9C5 /* cena-3 */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "cena-3"; sourceTree = "<group>"; };
@@ -168,6 +167,9 @@
 		B7B3D099262269D0002EE21B /* Scene4.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Scene4.swift; sourceTree = "<group>"; };
 		B7B3D0A4262291AA002EE21B /* cena-1 */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "cena-1"; sourceTree = "<group>"; };
 		B7B3D0A9262291C3002EE21B /* cena-4 */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "cena-4"; sourceTree = "<group>"; };
+		B7CD46B126248A8C00351DC3 /* Scene5.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Scene5.swift; sourceTree = "<group>"; };
+		B7CD46B62624911500351DC3 /* cena-5 */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "cena-5"; sourceTree = "<group>"; };
+		B7CD46BB262522BA00351DC3 /* cena-6 */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "cena-6"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -310,6 +312,7 @@
 				447A2677260036B500C533BC /* GameScene.swift */,
 				B7B3D09426226776002EE21B /* Scene1.swift */,
 				B7B3D099262269D0002EE21B /* Scene4.swift */,
+				B7CD46B126248A8C00351DC3 /* Scene5.swift */,
 				B78D7F8E262365A5008CB9C5 /* Scene2.swift */,
 				B78D7F9826239650008CB9C5 /* Scene3.swift */,
 				B78D7F9D262398E6008CB9C5 /* helpers.swift */,
@@ -357,12 +360,12 @@
 		5EF2F9792054B64800191409 /* PrivateResources */ = {
 			isa = PBXGroup;
 			children = (
+				B7CD46BB262522BA00351DC3 /* cena-6 */,
+				B7CD46B62624911500351DC3 /* cena-5 */,
 				B78D7F9326237138008CB9C5 /* cena-3 */,
 				B78D7F89262330AB008CB9C5 /* cena-2 */,
 				B7B3D0A9262291C3002EE21B /* cena-4 */,
 				B7B3D0A4262291AA002EE21B /* cena-1 */,
-				B707A50426225821008E17EA /* take-4 */,
-				B707A4FF26225812008E17EA /* take-1 */,
 				5EF2F97E2054B6E400191409 /* ManifestPlist.strings */,
 				447A265A2600305100C533BC /* GameScene.sks */,
 				5E086DCC2051DDAE004D8D25 /* LiveView.storyboard */,
@@ -509,8 +512,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B707A50526225821008E17EA /* take-4 in Resources */,
-				B707A50026225812008E17EA /* take-1 in Resources */,
+				B7CD46BC262522BA00351DC3 /* cena-6 in Resources */,
+				B7CD46B72624911500351DC3 /* cena-5 in Resources */,
 				447A265B2600305100C533BC /* GameScene.sks in Resources */,
 				B78D7F8A262330AB008CB9C5 /* cena-2 in Resources */,
 				5EF2F97C2054B6E400191409 /* ManifestPlist.strings in Resources */,
@@ -591,6 +594,7 @@
 			files = (
 				447A2678260036B500C533BC /* GameScene.swift in Sources */,
 				5E3196F32061DEA40077BBD7 /* LiveViewSupport.swift in Sources */,
+				B7CD46B226248A8C00351DC3 /* Scene5.swift in Sources */,
 				B78D7F9926239650008CB9C5 /* Scene3.swift in Sources */,
 				B78D7F9E262398E6008CB9C5 /* helpers.swift in Sources */,
 				B7B3D09A262269D0002EE21B /* Scene4.swift in Sources */,
