@@ -1,3 +1,9 @@
+/*: Page two
+ 
+ One year, they had to dedicate the young woman Naipi to Mboi, a serpent god who lived in the river.
+ 
+ */
+
 //#-hidden-code
 //
 //  See LICENSE folder for this template’s licensing information.

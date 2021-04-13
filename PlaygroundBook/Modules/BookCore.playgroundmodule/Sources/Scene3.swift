@@ -56,21 +56,21 @@ public class Scene3: SKScene {
         let background = setupBackground()
         background.position = CGPoint(x: 700, y: 300)
         
-        let taroba = setupTarobaFront(walkDuration: 6.5)
+        let taroba = setupTarobaFront(walkDuration: 4.2)
         taroba.position = CGPoint(x: -500, y: 600)
         
-        let moveTaroba = SKAction.move(to: CGPoint(x: 500, y: 500), duration: 7)
+        let moveTaroba = SKAction.move(to: CGPoint(x: 500, y: 500), duration: 4.5)
         moveTaroba.timingMode = .easeOut
         taroba.run(moveTaroba)
         
-        let naipi = setupNaipiBack(walkDuration: 4.5)
+        let naipi = setupNaipiBack(walkDuration: 3.5)
         naipi.position = CGPoint(x: 1600, y: 350)
         
-        let moveNaipi = SKAction.move(to: CGPoint(x: 900, y: 450), duration: 5)
+        let moveNaipi = SKAction.move(to: CGPoint(x: 900, y: 450), duration: 4)
         moveNaipi.timingMode = .easeOut
         naipi.run(moveNaipi)
         
-        let hearts = setupRedHearts(waitTime: 6)
+        let hearts = setupRedHearts(waitTime: 4)
         hearts.position = CGPoint(x: 700, y: 600)
         
         take3.addChild(background)

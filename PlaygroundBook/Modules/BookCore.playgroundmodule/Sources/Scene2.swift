@@ -50,24 +50,24 @@ public class Scene2: SKScene {
     }
     
     func setupTake2() {
+        // 6 seconds
         let background = setupBackground()
         background.position = CGPoint(x: 700, y: 300)
         
         let mboi = setupMboi()
         mboi.position = CGPoint(x: 2000, y: 300)
         
-        let moveMboi = SKAction.move(to: CGPoint(x: 1100, y: 300), duration: 10)
+        let moveMboi = SKAction.move(to: CGPoint(x: 1100, y: 300), duration: 6)
         moveMboi.timingMode = .easeIn
         mboi.run(moveMboi)
         
-        let naipi = setupNaipi(forwardDuration: 5)
+        let naipi = setupNaipi(forwardDuration: 3.2)
         naipi.position = CGPoint(x: 0, y: 675)
         
-        let moveNaipi = SKAction.move(to: CGPoint(x: 300, y: 675), duration: 5)
+        let moveNaipi = SKAction.move(to: CGPoint(x: 300, y: 675), duration: 3)
         moveNaipi.timingMode = .easeOut
         naipi.run(moveNaipi)
 
-        
         let take2 = SKNode()
         
         take2.addChild(background)

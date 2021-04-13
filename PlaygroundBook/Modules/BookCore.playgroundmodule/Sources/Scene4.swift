@@ -54,9 +54,9 @@ public class Scene4: PreScene {
         naipiAndTaroba.addChild(fullCanoe)
         naipiAndTaroba.addChild(riverForeground)
         
-        naipiAndTaroba.position = CGPoint(x: -1400, y: 0)
+        naipiAndTaroba.position = CGPoint(x: -1000, y: 0)
         
-        let moveCharacters = SKAction.move(to: CGPoint(x: 1400, y: 0), duration: 15)
+        let moveCharacters = SKAction.move(to: CGPoint(x: 1400, y: 0), duration: 7.5)
         naipiAndTaroba.run(moveCharacters)
         
         let mboi = setupMboi()
@@ -71,10 +71,10 @@ public class Scene4: PreScene {
         
         mboiCharacter.position = CGPoint(x: -1600,  y: 0)
         
-        let moveMboi = SKAction.move(to: CGPoint(x: 1800, y: 0), duration: 20)
+        let moveMboi = SKAction.move(to: CGPoint(x: 1800, y: 0), duration: 10)
         moveMboi.timingMode = .easeIn
         
-        mboiCharacter.run(moveMboi)
+        mboiCharacter.run(.sequence([.wait(forDuration: 1), moveMboi]))
         
         let take4 = SKNode()
         

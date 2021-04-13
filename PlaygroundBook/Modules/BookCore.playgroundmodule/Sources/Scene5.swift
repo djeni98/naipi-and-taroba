@@ -32,7 +32,7 @@ public class Scene5: PreScene {
         let river = setupRiverBackground(extend: true)
         river.position = CGPoint(x: 0, y: 300)
         
-        let earth = setupEarthBackground(crackWaitTime: 7)
+        let earth = setupEarthBackground(crackWaitTime: 4)
         earth.position = CGPoint(x: 0, y: -150)
         
         background.addChild(river)
@@ -52,7 +52,7 @@ public class Scene5: PreScene {
         
         mboiCharacter.position = CGPoint(x: 700,  y: 0)
         
-        let moveMboi = SKAction.move(to: CGPoint(x: -1600, y: 0), duration: 7.5)
+        let moveMboi = SKAction.move(to: CGPoint(x: -1600, y: 0), duration: 4.5)
         moveMboi.timingMode = .easeIn
         
         mboiCharacter.run(moveMboi)
@@ -80,10 +80,10 @@ public class Scene5: PreScene {
         naipiAndTaroba.addChild(fullCanoe)
         // naipiAndTaroba.addChild(riverForeground)
         
-        naipiAndTaroba.position = CGPoint(x: -500, y: 600)
+        naipiAndTaroba.position = CGPoint(x: -400, y: 600)
         
         let moveCharacters = SKAction.sequence([
-            .move(to: CGPoint(x: 900, y: 300), duration: 6),
+            .move(to: CGPoint(x: 900, y: 300), duration: 3.5),
             .run {
                 naipi.run(.move(to: CGPoint(x: 200, y: 700), duration: 0.3))
                 taroba.run(.move(to: CGPoint(x: 900, y: 600), duration: 0.3))
@@ -114,12 +114,12 @@ public class Scene5: PreScene {
         }
 
         background.run(.sequence([
-            .wait(forDuration: 5),
+            .wait(forDuration: 2.5),
             .move(to: CGPoint(x: 1000, y: 340), duration: 1.5), // Move down
-            .move(to: CGPoint(x: 500, y: 360), duration: 2), // Move forward
-            .move(to: CGPoint(x: -150, y: -800), duration: 2), // Move up
+            .move(to: CGPoint(x: 500, y: 360), duration: 1.5), // Move forward
+            .move(to: CGPoint(x: -150, y: -800), duration: 1), // Move up
             removeEarthAndAddFalls,
-            .move(to: CGPoint(x: -150, y: 100), duration: 2),
+            .move(to: CGPoint(x: -150, y: 100), duration: 1),
             SKAction.run {
                 naipiAndTaroba.run(moveCharacters)
             }

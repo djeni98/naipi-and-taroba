@@ -1,3 +1,11 @@
+/*: Page five
+ 
+ Mboi couldn’t reach Naipi and Tarobá, so he cracked the earth to stop them, creating the Falls.
+ 
+ Naipi and Tarobá fell inside it and were never seen anymore.
+ 
+ */
+
 //#-hidden-code
 //
 //  See LICENSE folder for this template’s licensing information.
