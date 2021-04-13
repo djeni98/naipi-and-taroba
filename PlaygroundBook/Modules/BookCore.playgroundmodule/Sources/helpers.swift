@@ -201,4 +201,36 @@ public class PreScene: SKScene {
         
         return canoe
     }
+    
+    func setupFallsLines(hideMiddleLine: Bool = false) -> SKNode {
+        let lines = SKNode()
+        
+        let l0 = SKSpriteNode(imageNamed: "cena-5/waterfall-line")
+        l0.zPosition = CHARACTER_ZPOSITION - 1
+        l0.position = CGPoint(x: -2 * l0.size.width, y: -212 * 2)
+        
+        let l1 = l0.copy() as! SKSpriteNode
+        l1.position = CGPoint(x: -1 * l0.size.width, y: -106 * 2)
+        
+        let l2 = l0.copy() as! SKSpriteNode
+        l2.alpha = hideMiddleLine ? 0 : 1
+        l2.position = CGPoint(x: 0, y: 0)
+        
+        let l3 = l0.copy() as! SKSpriteNode
+        l3.position = CGPoint(x: l0.size.width, y: 106 * 2)
+        
+        let l4 = l0.copy() as! SKSpriteNode
+        l4.position = CGPoint(x: 2 * l0.size.width, y: 212 * 2)
+        
+        lines.addChild(l0)
+        lines.addChild(l1)
+        lines.addChild(l2)
+        lines.addChild(l3)
+        lines.addChild(l4)
+        
+        // lines.setScale(0.5) // will be added a node with setScale
+        lines.zRotation = toRadians(5)
+        
+        return lines
+    }
 }

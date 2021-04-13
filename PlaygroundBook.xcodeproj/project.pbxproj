@@ -36,6 +36,7 @@
 		B7CD46B226248A8C00351DC3 /* Scene5.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7CD46B126248A8C00351DC3 /* Scene5.swift */; };
 		B7CD46B72624911500351DC3 /* cena-5 in Resources */ = {isa = PBXBuildFile; fileRef = B7CD46B62624911500351DC3 /* cena-5 */; };
 		B7CD46BC262522BA00351DC3 /* cena-6 in Resources */ = {isa = PBXBuildFile; fileRef = B7CD46BB262522BA00351DC3 /* cena-6 */; };
+		B7CD46C92625235600351DC3 /* Scene6.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7CD46C82625235600351DC3 /* Scene6.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXBuildRule section */
@@ -170,6 +171,7 @@
 		B7CD46B126248A8C00351DC3 /* Scene5.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Scene5.swift; sourceTree = "<group>"; };
 		B7CD46B62624911500351DC3 /* cena-5 */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "cena-5"; sourceTree = "<group>"; };
 		B7CD46BB262522BA00351DC3 /* cena-6 */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "cena-6"; sourceTree = "<group>"; };
+		B7CD46C82625235600351DC3 /* Scene6.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Scene6.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -316,6 +318,7 @@
 				B78D7F8E262365A5008CB9C5 /* Scene2.swift */,
 				B78D7F9826239650008CB9C5 /* Scene3.swift */,
 				B78D7F9D262398E6008CB9C5 /* helpers.swift */,
+				B7CD46C82625235600351DC3 /* Scene6.swift */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -599,6 +602,7 @@
 				B78D7F9E262398E6008CB9C5 /* helpers.swift in Sources */,
 				B7B3D09A262269D0002EE21B /* Scene4.swift in Sources */,
 				B7B3D09526226776002EE21B /* Scene1.swift in Sources */,
+				B7CD46C92625235600351DC3 /* Scene6.swift in Sources */,
 				5EF2F9AE2054BBF300191409 /* LiveViewController.swift in Sources */,
 				B78D7F8F262365A5008CB9C5 /* Scene2.swift in Sources */,
 			);
