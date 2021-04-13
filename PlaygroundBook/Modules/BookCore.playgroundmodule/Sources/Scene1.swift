@@ -8,13 +8,11 @@
 import Foundation
 import SpriteKit
 
-public class Scene1: SKScene {
-    var timerCounter = 0
-    var timer = SKLabelNode(text: "--")
+public class Scene1: PreScene {
     
     override public func didMove(to view: SKView) {
         self.backgroundColor = .white
-        setupTimer()
+        // setupTimer()
         setupTake1()
     }
     
@@ -25,25 +23,6 @@ public class Scene1: SKScene {
         get {
             return true
         }
-    }
-    
-    func setupTimer() {
-        let background = SKSpriteNode(color: .brown, size: CGSize(width: 100, height: 50))
-        timer.position = CGPoint(x: 0, y: -10)
-        background.position = CGPoint(x: self.size.width / 2, y: self.size.height - 40)
-        
-        let wait = SKAction.wait(forDuration: 1)
-        let update = SKAction.run(
-        {
-            self.timerCounter += 1
-            self.timer.text = "\(self.timerCounter)"
-        }
-        )
-        let seq = SKAction.sequence([wait,update])
-        
-        background.addChild(timer)
-        self.addChild(background)
-        self.run(.repeatForever(seq))
     }
     
     func setupTake1() {
@@ -68,6 +47,10 @@ public class Scene1: SKScene {
         take1.addChild(indians)
         
         self.addChild(take1)
+
+        let text = setupText(text: "A long time ago, Guarani Indians were living on the Iguassu River banks.")
+        
+        self.addChild(text)
     }
     
     func setupBackground() -> SKNode {

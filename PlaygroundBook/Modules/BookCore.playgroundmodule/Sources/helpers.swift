@@ -7,9 +7,10 @@
 
 import Foundation
 import SpriteKit
+import PlaygroundSupport
 
 public let width = 700 * 2
-public let height = 600 * 2
+public let height = 600 * 2 + 300
 
 public func toRadians(_ degrees: Double) -> CGFloat {
     return CGFloat(degrees * .pi / 180)
@@ -40,6 +41,32 @@ public class PreScene: SKScene {
         background.addChild(timer)
         self.addChild(background)
         self.run(.repeatForever(seq))
+    }
+    
+    func setupText(text: String) -> SKLabelNode {
+        let label = SKLabelNode(fontNamed: "arial")
+        label.text = text
+        label.fontColor = .black
+        label.fontSize = 30
+        label.position = CGPoint(x: self.size.width / 2, y: self.size.height - 100)
+        label.zPosition = 10
+        
+        return label
+    }
+    
+    func setupText(texts: [String]) -> SKNode {
+        let node = SKNode()
+        
+        var y = -50 * (texts.count / 2)
+        for text in texts.reversed() {
+            let t = self.setupText(text: text)
+            t.position = CGPoint(x: 0, y: y)
+            y += 50
+            node.addChild(t)
+        }
+        node.position = CGPoint(x: self.size.width / 2, y: self.size.height - 100)
+        
+        return node
     }
     
     func setupCharacterPaddling(prefix: String, animateBody: Bool = true, animateArms: Bool = true) -> SKNode {

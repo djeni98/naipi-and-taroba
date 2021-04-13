@@ -138,6 +138,13 @@ public class Scene5: PreScene {
         // naipiAndTaroba.run(moveCharacters)
         
         self.addChild(take4)
+        
+        let text = setupText(texts: [
+            "Mboi couldn’t reach Naipi and Tarobá, so he cracked the earth to stop them, creating the Falls.",
+            "Naipi and Tarobá fell inside it and were never seen anymore."
+        ])
+        
+        self.addChild(text)
     }
     
     func setupEarthBackground(crackWaitTime: TimeInterval) -> SKNode {

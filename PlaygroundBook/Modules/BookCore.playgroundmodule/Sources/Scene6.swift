@@ -16,7 +16,6 @@ public class Scene6: PreScene {
         setup()
     }
     
-    
     @objc static override public var supportsSecureCoding: Bool {
         // SKNode conforms to NSSecureCoding, so any subclass going
         // through the decoding process must support secure coding
@@ -59,6 +58,13 @@ public class Scene6: PreScene {
         ]))
         
         self.addChild(background)
+        
+        let text = setupText(texts: [
+            "The legend tells that Naipi became a rock in the middle of the Falls and Tarobá became a palm.",
+            "In this way, they are fated to see each other without being able to be together again."
+        ])
+        
+        self.addChild(text)
     }
     
     func setupRock() -> SKNode {

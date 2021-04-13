@@ -8,13 +8,7 @@
 import Foundation
 import SpriteKit
 
-public class Scene2: SKScene {
-    
-    let CHARACTER_ZPOSITION: CGFloat = 10
-    let FOREGROUNG_ZPOSITION: CGFloat = 20
-    
-    var timerCounter = 0
-    var timer = SKLabelNode(text: "--")
+public class Scene2: PreScene {
     
     override public func didMove(to view: SKView) {
         self.backgroundColor = .white
@@ -28,25 +22,6 @@ public class Scene2: SKScene {
         get {
             return true
         }
-    }
-    
-    func setupTimer() {
-        let background = SKSpriteNode(color: .brown, size: CGSize(width: 100, height: 50))
-        timer.position = CGPoint(x: 0, y: -10)
-        background.position = CGPoint(x: self.size.width / 2, y: self.size.height - 40)
-        
-        let wait = SKAction.wait(forDuration: 1)
-        let update = SKAction.run(
-        {
-            self.timerCounter += 1
-            self.timer.text = "\(self.timerCounter)"
-        }
-        )
-        let seq = SKAction.sequence([wait,update])
-        
-        background.addChild(timer)
-        self.addChild(background)
-        self.run(.repeatForever(seq))
     }
     
     func setupTake2() {
@@ -75,6 +50,10 @@ public class Scene2: SKScene {
         take2.addChild(naipi)
         
         self.addChild(take2)
+        
+        let text = setupText(text: "One year, they had to dedicate the young woman Naipi to Mboi, a serpent god who lived in the river.")
+        
+        self.addChild(text)
     }
     
     func setupBackground() -> SKNode {
@@ -95,7 +74,7 @@ public class Scene2: SKScene {
         return background
     }
     
-    func setupMboi() -> SKNode {
+    override func setupMboi() -> SKNode {
         let mboiNode = SKNode()
         
         let mboi = SKSpriteNode(imageNamed: "cena-2/mboi-curve-1")

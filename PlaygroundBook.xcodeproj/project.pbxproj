@@ -313,12 +313,12 @@
 				5E3196F22061DEA40077BBD7 /* LiveViewSupport.swift */,
 				447A2677260036B500C533BC /* GameScene.swift */,
 				B7B3D09426226776002EE21B /* Scene1.swift */,
-				B7B3D099262269D0002EE21B /* Scene4.swift */,
-				B7CD46B126248A8C00351DC3 /* Scene5.swift */,
 				B78D7F8E262365A5008CB9C5 /* Scene2.swift */,
 				B78D7F9826239650008CB9C5 /* Scene3.swift */,
-				B78D7F9D262398E6008CB9C5 /* helpers.swift */,
+				B7B3D099262269D0002EE21B /* Scene4.swift */,
+				B7CD46B126248A8C00351DC3 /* Scene5.swift */,
 				B7CD46C82625235600351DC3 /* Scene6.swift */,
+				B78D7F9D262398E6008CB9C5 /* helpers.swift */,
 			);
 			path = Sources;
 			sourceTree = "<group>";

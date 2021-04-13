@@ -83,5 +83,12 @@ public class Scene4: PreScene {
         take4.addChild(naipiAndTaroba)
         
         self.addChild(take4)
+        
+        let text = setupText(texts: [
+            "They decided to run away from Mboi through the river.",
+            "However, Mboi realized it and started chasing them."
+        ])
+        
+        self.addChild(text)
     }
 }

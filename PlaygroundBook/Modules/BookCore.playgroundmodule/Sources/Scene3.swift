@@ -8,13 +8,7 @@
 import Foundation
 import SpriteKit
 
-public class Scene3: SKScene {
-    
-    let CHARACTER_ZPOSITION: CGFloat = 10
-    let FOREGROUNG_ZPOSITION: CGFloat = 20
-    
-    var timerCounter = 0
-    var timer = SKLabelNode(text: "--")
+public class Scene3: PreScene {
     
     override public func didMove(to view: SKView) {
         self.backgroundColor = .white
@@ -29,25 +23,6 @@ public class Scene3: SKScene {
         get {
             return true
         }
-    }
-    
-    func setupTimer() {
-        let background = SKSpriteNode(color: .brown, size: CGSize(width: 100, height: 50))
-        timer.position = CGPoint(x: 0, y: -10)
-        background.position = CGPoint(x: self.size.width / 2, y: self.size.height - 40)
-        
-        let wait = SKAction.wait(forDuration: 1)
-        let update = SKAction.run(
-        {
-            self.timerCounter += 1
-            self.timer.text = "\(self.timerCounter)"
-        }
-        )
-        let seq = SKAction.sequence([wait,update])
-        
-        background.addChild(timer)
-        self.addChild(background)
-        self.run(.repeatForever(seq))
     }
     
     func setupTake3() {
@@ -79,6 +54,10 @@ public class Scene3: SKScene {
         take3.addChild(hearts)
         
         self.addChild(take3)
+        
+        let text = setupText(text: "But Naipi met Tarobá, and these two fell in love.")
+        
+        self.addChild(text)
     }
     
     func setupBackground() -> SKNode {
