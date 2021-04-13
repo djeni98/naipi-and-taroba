@@ -8,6 +8,9 @@
 import Foundation
 import SpriteKit
 
+public let width = 700 * 2
+public let height = 600 * 2
+
 public func toRadians(_ degrees: Double) -> CGFloat {
     return CGFloat(degrees * .pi / 180)
 }
