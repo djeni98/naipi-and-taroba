@@ -70,7 +70,7 @@ public class Scene6: PreScene {
     func setupRock() -> SKNode {
         let node = SKNode()
         
-        let rock = SKSpriteNode(imageNamed: "cena-6/rock")
+        let rock = SKSpriteNode(imageNamed: "images/rock")
         rock.zPosition = CHARACTER_ZPOSITION
         
         node.addChild(rock)
@@ -82,13 +82,13 @@ public class Scene6: PreScene {
     func setupEarthAndPalm() -> SKNode {
         let node = SKNode()
         
-        let earth = SKSpriteNode(imageNamed: "cena-2/earth")
+        let earth = SKSpriteNode(imageNamed: "images/earth-1")
         earth.yScale = earth.yScale * -1
         earth.position = CGPoint(x: -200, y: -400)
         earth.zRotation = toRadians(-7)
         earth.zPosition = CHARACTER_ZPOSITION + 1
         
-        let palm = SKSpriteNode(imageNamed: "cena-6/palm")
+        let palm = SKSpriteNode(imageNamed: "images/palm")
         palm.zPosition = CHARACTER_ZPOSITION + 2
         palm.position = CGPoint(x: 100, y: 500)
         

@@ -150,21 +150,21 @@ public class Scene5: PreScene {
     func setupEarthBackground(crackWaitTime: TimeInterval) -> SKNode {
         let node = SKNode()
         
-        let earth = SKSpriteNode(imageNamed: "cena-5/earth")
+        let earth = SKSpriteNode(imageNamed: "images/earth-river")
         earth.zPosition = 4
         
-        let crack = SKSpriteNode(imageNamed: "cena-5/crack-4")
+        let crack = SKSpriteNode(imageNamed: "images/crack-4")
         crack.alpha = 0
         crack.zPosition = 5
         crack.position = CGPoint(x: earth.size.width / 2 - crack.size.width / 2, y: 0)
         
         var animationCrackList = [SKTexture]()
         
-        animationCrackList.append(SKTexture(imageNamed: "cena-5/crack-0"))
-        animationCrackList.append(SKTexture(imageNamed: "cena-5/crack-1"))
-        animationCrackList.append(SKTexture(imageNamed: "cena-5/crack-2"))
-        animationCrackList.append(SKTexture(imageNamed: "cena-5/crack-3"))
-        animationCrackList.append(SKTexture(imageNamed: "cena-5/crack-4"))
+        animationCrackList.append(SKTexture(imageNamed: "images/crack-0"))
+        animationCrackList.append(SKTexture(imageNamed: "images/crack-1"))
+        animationCrackList.append(SKTexture(imageNamed: "images/crack-2"))
+        animationCrackList.append(SKTexture(imageNamed: "images/crack-3"))
+        animationCrackList.append(SKTexture(imageNamed: "images/crack-4"))
         
         let animateCrack = SKAction.animate(with: animationCrackList, timePerFrame: 0.3, resize: true, restore: true)
         
