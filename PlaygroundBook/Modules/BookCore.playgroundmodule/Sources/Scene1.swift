@@ -12,7 +12,6 @@ public class Scene1: PreScene {
     
     override public func didMove(to view: SKView) {
         self.backgroundColor = .white
-        // setupTimer()
         setupTake1()
     }
     
@@ -56,13 +55,13 @@ public class Scene1: PreScene {
     func setupBackground() -> SKNode {
         let background = SKNode()
         
-        let river = SKSpriteNode(imageNamed: "images/river-0")
-        river.position = CGPoint(x: 825, y: 0)
+        let river = SKSpriteNode(imageNamed: "images/river-0-rescale")
+        river.position = CGPoint(x: self.size.width * 0.9, y: 0)
         river.zPosition = 1
         background.addChild(river)
         
-        let earth = SKSpriteNode(imageNamed: "images/earth-0")
-        earth.position = CGPoint(x: -275, y: 100)
+        let earth = SKSpriteNode(imageNamed: "images/earth-0-rescale")
+        earth.position = CGPoint(x: 0 + self.size.width * 0.1, y: 100)
         earth.zPosition = 2
         background.addChild(earth)
         

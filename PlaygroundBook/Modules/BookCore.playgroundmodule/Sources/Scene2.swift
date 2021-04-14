@@ -12,7 +12,6 @@ public class Scene2: PreScene {
     
     override public func didMove(to view: SKView) {
         self.backgroundColor = .white
-        setupTimer()
         setupTake2()
     }
     
@@ -30,16 +29,16 @@ public class Scene2: PreScene {
         background.position = CGPoint(x: 700, y: 300)
         
         let mboi = setupMboi()
-        mboi.position = CGPoint(x: 2000, y: 300)
+        mboi.position = CGPoint(x: self.size.width * 1.3, y: 300)
         
-        let moveMboi = SKAction.move(to: CGPoint(x: 1100, y: 300), duration: 6)
+        let moveMboi = SKAction.move(to: CGPoint(x: self.size.width * 0.75, y: 300), duration: 6)
         moveMboi.timingMode = .easeIn
-        mboi.run(moveMboi)
+        mboi.run(.sequence([.wait(forDuration: 1), moveMboi]))
         
         let naipi = setupNaipi(forwardDuration: 3.2)
-        naipi.position = CGPoint(x: 0, y: 675)
+        naipi.position = CGPoint(x: 0 - self.size.width * 0.1, y: 675)
         
-        let moveNaipi = SKAction.move(to: CGPoint(x: 300, y: 675), duration: 3)
+        let moveNaipi = SKAction.move(to: CGPoint(x: self.size.width * 0.25, y: 675), duration: 3)
         moveNaipi.timingMode = .easeOut
         naipi.run(moveNaipi)
 
@@ -59,8 +58,8 @@ public class Scene2: PreScene {
     func setupBackground() -> SKNode {
         let background = SKNode()
         
-        let earth = SKSpriteNode(imageNamed: "images/earth-1")
-        earth.position = CGPoint(x: 0, y: 500)
+        let earth = SKSpriteNode(imageNamed: "images/earth-1-rescale")
+        earth.position = CGPoint(x: self.size.width * 0.25, y: 500)
         earth.zPosition = 1
         background.addChild(earth)
         

@@ -13,7 +13,6 @@ public class Scene4: PreScene {
     
     override public func didMove(to view: SKView) {
         self.backgroundColor = .white
-        setupTimer()
         setupTake4()
     }
     
@@ -56,7 +55,7 @@ public class Scene4: PreScene {
         
         naipiAndTaroba.position = CGPoint(x: -1000, y: 0)
         
-        let moveCharacters = SKAction.move(to: CGPoint(x: 1400, y: 0), duration: 7.5)
+        let moveCharacters = SKAction.move(to: CGPoint(x: self.size.width, y: 0), duration: 7.5)
         naipiAndTaroba.run(moveCharacters)
         
         let mboi = setupMboi()
@@ -71,7 +70,7 @@ public class Scene4: PreScene {
         
         mboiCharacter.position = CGPoint(x: -1600,  y: 0)
         
-        let moveMboi = SKAction.move(to: CGPoint(x: 1800, y: 0), duration: 10)
+        let moveMboi = SKAction.move(to: CGPoint(x: self.size.width + 400, y: 0), duration: 10)
         moveMboi.timingMode = .easeIn
         
         mboiCharacter.run(.sequence([.wait(forDuration: 1), moveMboi]))

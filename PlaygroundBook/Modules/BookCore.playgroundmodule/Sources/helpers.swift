@@ -9,8 +9,8 @@ import Foundation
 import SpriteKit
 import PlaygroundSupport
 
-public let width = 700 * 2
-public let height = 600 * 2 + 300
+public let width = 2000 // 700 * 2
+public let height = 600 * 2 + 300 // == 1200 + 300 == 1500
 
 public func toRadians(_ degrees: Double) -> CGFloat {
     return CGFloat(degrees * .pi / 180)
@@ -166,7 +166,6 @@ public class PreScene: SKScene {
         
         if extend {
             let copy = back.copy() as! SKSpriteNode
-            copy.alpha = 0.5
             copy.position = CGPoint(x: back.size.width, y: 0)
             
             copy.removeAllActions()

@@ -12,7 +12,6 @@ public class Scene3: PreScene {
     
     override public func didMove(to view: SKView) {
         self.backgroundColor = .white
-        setupTimer()
         setupTake3()
     }
     
@@ -31,22 +30,22 @@ public class Scene3: PreScene {
         let background = setupBackground()
         background.position = CGPoint(x: 700, y: 300)
         
-        let taroba = setupTarobaFront(walkDuration: 4.2)
-        taroba.position = CGPoint(x: -500, y: 600)
+        let taroba = setupTarobaFront(walkDuration: 5.2)
+        taroba.position = CGPoint(x: -100, y: 600)
         
-        let moveTaroba = SKAction.move(to: CGPoint(x: 500, y: 500), duration: 4.5)
+        let moveTaroba = SKAction.move(to: CGPoint(x: self.size.width * 0.5 - 200, y: 500), duration: 4.5)
         moveTaroba.timingMode = .easeOut
-        taroba.run(moveTaroba)
+        taroba.run(.sequence([.wait(forDuration: 1), moveTaroba]))
         
         let naipi = setupNaipiBack(walkDuration: 3.5)
-        naipi.position = CGPoint(x: 1600, y: 350)
+        naipi.position = CGPoint(x: self.size.width, y: 350)
         
-        let moveNaipi = SKAction.move(to: CGPoint(x: 900, y: 450), duration: 4)
+        let moveNaipi = SKAction.move(to: CGPoint(x: self.size.width * 0.5 + 200, y: 450), duration: 4)
         moveNaipi.timingMode = .easeOut
         naipi.run(moveNaipi)
         
-        let hearts = setupRedHearts(waitTime: 4)
-        hearts.position = CGPoint(x: 700, y: 600)
+        let hearts = setupRedHearts(waitTime: 4.5)
+        hearts.position = CGPoint(x: self.size.width * 0.5, y: 600)
         
         take3.addChild(background)
         take3.addChild(taroba)
@@ -63,8 +62,8 @@ public class Scene3: PreScene {
     func setupBackground() -> SKNode {
         let background = SKNode()
         
-        let earth = SKSpriteNode(imageNamed: "images/earth-2ce")
-        earth.position = CGPoint(x: 0, y: 0)
+        let earth = SKSpriteNode(imageNamed: "images/earth-2-rescale")
+        earth.position = CGPoint(x: self.size.width * 0.3, y: 0)
         earth.zPosition = 1
         
         background.addChild(earth)

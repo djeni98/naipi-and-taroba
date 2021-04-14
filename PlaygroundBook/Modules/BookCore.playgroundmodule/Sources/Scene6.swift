@@ -12,7 +12,6 @@ public class Scene6: PreScene {
     
     override public func didMove(to view: SKView) {
         self.backgroundColor = .white
-        setupTimer()
         setup()
     }
     
@@ -30,7 +29,7 @@ public class Scene6: PreScene {
         
         let falls = self.setupRiverBackground()
         falls.zRotation = toRadians(-5)
-        falls.position = CGPoint(x: 0, y: 300)
+        falls.position = CGPoint(x: self.size.width * 0.35, y: 250)
         
         let fallsLines = self.setupFallsLines(hideMiddleLine: true)
         fallsLines.position = CGPoint(x: 2100, y: -1000)
@@ -39,7 +38,7 @@ public class Scene6: PreScene {
         background.addChild(falls)
         
         let rock = setupRock()
-        rock.position = CGPoint(x: 1150, y: 50)
+        rock.position = CGPoint(x: self.size.width - 150, y: 50)
         
         background.addChild(rock)
         
@@ -82,7 +81,7 @@ public class Scene6: PreScene {
     func setupEarthAndPalm() -> SKNode {
         let node = SKNode()
         
-        let earth = SKSpriteNode(imageNamed: "images/earth-1")
+        let earth = SKSpriteNode(imageNamed: "images/earth-1-rescale")
         earth.yScale = earth.yScale * -1
         earth.position = CGPoint(x: -200, y: -400)
         earth.zRotation = toRadians(-7)

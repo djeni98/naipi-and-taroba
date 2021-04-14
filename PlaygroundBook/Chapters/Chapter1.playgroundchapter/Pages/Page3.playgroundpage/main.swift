@@ -23,6 +23,8 @@ var scene = Scene3(size: CGSize(width: width, height: height))
 scene.scaleMode = .aspectFit
 sceneView.presentScene(scene)
 
+PlaygroundPage.current.wantsFullScreenLiveView = true
+
 PlaygroundPage.current.liveView = sceneView
 PlaygroundPage.current.needsIndefiniteExecution = true
 

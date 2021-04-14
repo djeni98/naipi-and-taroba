@@ -12,7 +12,6 @@ public class Scene5: PreScene {
     
     override public func didMove(to view: SKView) {
         self.backgroundColor = .white
-        setupTimer()
         setupPart1()
         // setupTake4()
     }
@@ -33,7 +32,7 @@ public class Scene5: PreScene {
         river.position = CGPoint(x: 0, y: 300)
         
         let earth = setupEarthBackground(crackWaitTime: 4)
-        earth.position = CGPoint(x: 0, y: -150)
+        earth.position = CGPoint(x: 100, y: -150)
         
         background.addChild(river)
         background.addChild(earth)
@@ -83,7 +82,7 @@ public class Scene5: PreScene {
         naipiAndTaroba.position = CGPoint(x: -400, y: 600)
         
         let moveCharacters = SKAction.sequence([
-            .move(to: CGPoint(x: 900, y: 300), duration: 3.5),
+            .move(to: CGPoint(x: self.size.width * 0.75, y: 300), duration: 3.5),
             .run {
                 naipi.run(.move(to: CGPoint(x: 200, y: 700), duration: 0.3))
                 taroba.run(.move(to: CGPoint(x: 900, y: 600), duration: 0.3))
@@ -91,8 +90,8 @@ public class Scene5: PreScene {
                 canoe.run(.moveTo(y: 200, duration: 0.3))
                 canoe.run(.rotate(byAngle: toRadians(-20), duration: 0.2))
             },
-            .group([.move(to: CGPoint(x: 1000, y: 200), duration: 0.2), .rotate(byAngle: toRadians(-60), duration: 0.2)]),
-            .group([.move(to: CGPoint(x: 1150, y: -200), duration: 1), .rotate(byAngle: toRadians(-30), duration: 0.2)]),
+            .group([.move(to: CGPoint(x: self.size.width * 0.8, y: 200), duration: 0.2), .rotate(byAngle: toRadians(-60), duration: 0.2)]),
+            .group([.move(to: CGPoint(x: self.size.width * 0.85, y: -200), duration: 1), .rotate(byAngle: toRadians(-30), duration: 0.2)]),
         ])
      
         naipiAndTaroba.zRotation = toRadians(-5)
@@ -104,7 +103,7 @@ public class Scene5: PreScene {
             
             let falls = self.setupRiverBackground()
             falls.zRotation = toRadians(-5)
-            falls.position = CGPoint(x: 0, y: 300)
+            falls.position = CGPoint(x: self.size.width * 0.3, y: 250)
             
             let fallsLines = self.setupFallsLines()
             fallsLines.position = CGPoint(x: 2100, y: -1000)
