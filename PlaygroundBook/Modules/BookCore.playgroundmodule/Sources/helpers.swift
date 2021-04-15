@@ -346,11 +346,15 @@ public class PreScene: SKScene {
         self.handButton = node
         self.infoTextNode = infoNode
         
-        let nextButton = SKShapeNode(circleOfRadius: 200)
-        nextButton.fillColor = .blue
+//        let nextButton = SKShapeNode(circleOfRadius: 200)
+//        nextButton.fillColor = .blue
+
+        let nextButton = SKSpriteNode(imageNamed: "images/next-page-2")
         nextButton.zPosition = UI_ZPOSITION + 7
-        nextButton.position = CGPoint(x: self.size.width - 200, y: 200)
+        nextButton.anchorPoint = CGPoint(x: 1, y: 0)
+        nextButton.position = CGPoint(x: self.size.width + 25, y: -25)
         nextButton.alpha = 0
+        nextButton.setScale(0.1)
 
         self.addChild(nextButton)
 
@@ -377,8 +381,13 @@ public class PreScene: SKScene {
             infoTextNode.run(fadeIn)
             
             handButton.alpha = 0
+
+            let scale = SKAction.sequence([
+                .scale(to: 0.35, duration: 1.5),
+                .scale(to: 0.1, duration: 1.5)
+            ])
             
-            nextPageButton.run(.sequence([.wait(forDuration: nextButtonWaitTime), fadeIn]))
+            nextPageButton.run(.sequence([.wait(forDuration: nextButtonWaitTime), .fadeIn(withDuration: 0), .repeatForever(scale)]))
 
         } else if nextPageButton.contains(pos) && pageStatus == .information {
             PlaygroundPage.current.navigateTo(page: .next)
