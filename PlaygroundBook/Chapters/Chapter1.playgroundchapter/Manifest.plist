@@ -7,12 +7,12 @@
 	<key>Pages</key>
 	<array>
 		<string>Introduction.playgroundpage</string>
-		<string>Page1.playgroundpage</string>
-		<string>Page2.playgroundpage</string>
-		<string>Page3.playgroundpage</string>
-		<string>Page4.playgroundpage</string>
-		<string>Page5.playgroundpage</string>
-		<string>Page6.playgroundpage</string>
+		<string>Page1.cutscenepage</string>
+		<string>Page2.cutscenepage</string>
+		<string>Page3.cutscenepage</string>
+		<string>Page4.cutscenepage</string>
+		<string>Page5.cutscenepage</string>
+		<string>Page6.cutscenepage</string>
 	</array>
 </dict>
 </plist>
