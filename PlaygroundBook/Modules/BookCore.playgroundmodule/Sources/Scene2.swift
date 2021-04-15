@@ -50,7 +50,8 @@ public class Scene2: PreScene {
         
         self.addChild(take2)
         
-        let text = setupText(text: "One year, they had to dedicate the young woman Naipi to Mboi, a serpent god who lived in the river.")
+        let text = setupText(texts: ["One year, they had to dedicate the young woman Naipi to Mboi,", "a serpent god who lived in the river."])
+        text.position = CGPoint(x: self.size.width / 2, y: self.size.height - 200)
         
         self.addChild(text)
     }

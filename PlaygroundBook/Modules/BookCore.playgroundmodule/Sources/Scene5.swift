@@ -139,9 +139,12 @@ public class Scene5: PreScene {
         self.addChild(take4)
         
         let text = setupText(texts: [
-            "Mboi couldn’t reach Naipi and Tarobá, so he cracked the earth to stop them, creating the Falls.",
+            "Mboi couldn’t reach Naipi and Tarobá,",
+            "so he cracked the earth to stop them, creating the Falls.",
+            "",
             "Naipi and Tarobá fell inside it and were never seen anymore."
         ])
+        text.position = CGPoint(x: self.size.width / 2, y: self.size.height - 200)
         
         self.addChild(text)
     }

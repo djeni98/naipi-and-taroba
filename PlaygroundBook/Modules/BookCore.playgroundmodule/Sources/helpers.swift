@@ -3,7 +3,6 @@
 //  PlaygroundBook
 //
 //  Created by Djenifer Renata Pereira on 11/04/21.
-//
 
 import Foundation
 import SpriteKit
@@ -23,6 +22,16 @@ public class PreScene: SKScene {
     
     let CHARACTER_ZPOSITION: CGFloat = 10
     let FOREGROUNG_ZPOSITION: CGFloat = 20
+    let UI_ZPOSITION: CGFloat = 30
+    
+    let storyFont = "Herculanum"
+    let infoFont = "Klee" // "Papyrus"
+    
+    var infoTextNode: SKNode!
+    
+    var pageStatus = PageStatus.animation
+    var handButton: SKNode!
+    var nextPageButton: SKNode!
     
     func setupTimer() {
         let background = SKSpriteNode(color: .brown, size: CGSize(width: 100, height: 50))
@@ -43,30 +52,64 @@ public class PreScene: SKScene {
         self.run(.repeatForever(seq))
     }
     
-    func setupText(text: String) -> SKLabelNode {
-        let label = SKLabelNode(fontNamed: "arial")
+    func setupText(text: String, fontSize: CGFloat = 40, font: String? = nil) -> SKLabelNode {
+        let label = SKLabelNode(fontNamed: font ?? storyFont)
         label.text = text
         label.fontColor = .black
-        label.fontSize = 30
-        label.position = CGPoint(x: self.size.width / 2, y: self.size.height - 100)
-        label.zPosition = 10
+        label.fontSize = fontSize
+        label.zPosition = UI_ZPOSITION
         
         return label
     }
     
-    func setupText(texts: [String]) -> SKNode {
+    func setupText(texts: [String], fontSize: CGFloat = 40, font: String? = nil) -> SKNode {
         let node = SKNode()
         
         var y = -50 * (texts.count / 2)
         for text in texts.reversed() {
-            let t = self.setupText(text: text)
+            let t = self.setupText(text: text, fontSize: fontSize, font: font)
             t.position = CGPoint(x: 0, y: y)
             y += 50
             node.addChild(t)
         }
-        node.position = CGPoint(x: self.size.width / 2, y: self.size.height - 100)
         
         return node
+    }
+    
+    func setupInfoBox(balloonNumber: Int, text: String) -> SKNode {
+        let node = SKNode()
+        
+        let balloon = SKSpriteNode(imageNamed: "images/b-\(balloonNumber)")
+        balloon.zPosition = UI_ZPOSITION + 3
+        balloon.setScale(0.5)
+        
+        let infoText = setupParagraph(
+            text: text,
+            font: self.infoFont, fontSize: 30
+        )
+        infoText.zPosition = UI_ZPOSITION + 4
+        
+        node.addChild(infoText)
+        node.addChild(balloon)
+        
+        return node
+    }
+    
+    func setupParagraph(text: String, font: String, fontSize: CGFloat) -> SKLabelNode {
+        let label = SKLabelNode()
+        let centeredText = NSMutableAttributedString(string: text)
+        let paragraphStyle = NSMutableParagraphStyle()
+        paragraphStyle.alignment = .center
+        let range = NSRange(location: 0, length: text.count)
+        centeredText.addAttribute(NSAttributedString.Key.paragraphStyle, value: paragraphStyle, range: range)
+        centeredText.addAttributes([NSAttributedString.Key.foregroundColor: UIColor.black, NSAttributedString.Key.font: UIFont(name: font, size: fontSize) ?? UIFont.systemFont(ofSize: fontSize)], range: range)
+        label.attributedText = centeredText
+        label.fontName = font
+        label.fontSize = fontSize
+        label.fontColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
+        label.numberOfLines = 0
+        
+        return label
     }
     
     func setupCharacterPaddling(prefix: String, animateBody: Bool = true, animateArms: Bool = true) -> SKNode {
@@ -262,4 +305,92 @@ public class PreScene: SKScene {
         
         return lines
     }
+    
+    func setupHandButton(infoNode: SKNode) -> SKNode {
+        let node = SKNode()
+        
+        let hand = SKSpriteNode(imageNamed: "images/click-hand")
+        hand.zPosition = UI_ZPOSITION + 1
+        // hand.position = CGPoint(x: 50, y: -200)
+        
+        let animate = SKAction.sequence([
+            .scale(to: 1.2, duration: 0.5),
+            .scale(to: 1, duration: 0.5),
+        ])
+        
+        let circle = SKShapeNode(circleOfRadius: 400)
+        circle.position = CGPoint(x: -50, y: 200)
+        circle.zPosition = UI_ZPOSITION
+        circle.strokeColor = .blue
+        circle.lineWidth = 4
+
+        node.addChild(circle)
+        
+        hand.run(.repeatForever(animate))
+        
+        node.addChild(hand)
+        node.setScale(0.5)
+        
+        self.handButton = node
+        self.infoTextNode = infoNode
+        
+        let nextButton = SKShapeNode(circleOfRadius: 200)
+        nextButton.fillColor = .blue
+        nextButton.zPosition = UI_ZPOSITION + 7
+        nextButton.position = CGPoint(x: self.size.width - 200, y: 200)
+        nextButton.alpha = 0
+
+        self.addChild(nextButton)
+
+        nextPageButton = nextButton
+        
+        return node
+    }
+    
+    func touchDown(atPoint pos : CGPoint) {
+    }
+
+    func touchMoved(toPoint pos : CGPoint) {
+    }
+
+    func touchUp(atPoint pos : CGPoint) {
+        if handButton == nil { return }
+        
+        // clique na mao
+        if handButton.contains(pos) && pageStatus == .animation {
+            pageStatus = .information
+            
+            let fadeIn = SKAction.fadeIn(withDuration: 0.75)
+            fadeIn.timingMode = .easeOut
+            infoTextNode.run(fadeIn)
+            
+            handButton.alpha = 0
+            
+            nextPageButton.run(.sequence([.wait(forDuration: 2), fadeIn]))
+
+        } else if nextPageButton.contains(pos) && pageStatus == .information {
+            PlaygroundPage.current.navigateTo(page: .next)
+        }
+    }
+
+    override public func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        for t in touches { touchDown(atPoint: t.location(in: self)) }
+    }
+
+    override public func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
+        for t in touches { touchMoved(toPoint: t.location(in: self)) }
+    }
+
+    override public func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
+        for t in touches { touchUp(atPoint: t.location(in: self)) }
+    }
+
+    override public func touchesCancelled(_ touches: Set<UITouch>, with event: UIEvent?) {
+        for t in touches { touchUp(atPoint: t.location(in: self)) }
+    }
+}
+
+enum PageStatus {
+    case animation
+    case information
 }

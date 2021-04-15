@@ -55,6 +55,7 @@ public class Scene3: PreScene {
         self.addChild(take3)
         
         let text = setupText(text: "But Naipi met Tarobá, and these two fell in love.")
+        text.position = CGPoint(x: self.size.width / 2, y: self.size.height - 200)
         
         self.addChild(text)
     }

@@ -59,9 +59,12 @@ public class Scene6: PreScene {
         self.addChild(background)
         
         let text = setupText(texts: [
-            "The legend tells that Naipi became a rock in the middle of the Falls and Tarobá became a palm.",
+            "The legend tells that Naipi became a rock in the middle of the Falls",
+            "and Tarobá became a palm.",
+            "",
             "In this way, they are fated to see each other without being able to be together again."
         ])
+        text.position = CGPoint(x: self.size.width / 2, y: self.size.height - 200)
         
         self.addChild(text)
     }

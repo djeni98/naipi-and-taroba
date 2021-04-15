@@ -3,7 +3,6 @@
 //  PlaygroundBook
 //
 //  Created by Djenifer Renata Pereira on 10/04/21.
-//
 
 import Foundation
 import SpriteKit
@@ -15,7 +14,6 @@ public class Scene1: PreScene {
         setupTake1()
     }
     
-    
     @objc static override public var supportsSecureCoding: Bool {
         // SKNode conforms to NSSecureCoding, so any subclass going
         // through the decoding process must support secure coding
@@ -25,6 +23,37 @@ public class Scene1: PreScene {
     }
     
     func setupTake1() {
+        let str = "A long time ago, Kaingang Indigenous were living around the Iguazu River banks."
+        let text = setupText(text: str)
+        text.position = CGPoint(x: self.size.width / 2, y: self.size.height - 200)
+        
+        text.alpha = 0
+        text.run(.sequence([
+            .wait(forDuration: 1),
+            .fadeIn(withDuration: 1)
+        ]))
+        
+        self.addChild(text)
+        
+        self.run(.sequence([
+            .wait(forDuration: 3),
+            .run {
+                let animation = self.setupAnimation(delay: 3)
+                let whiteRect = SKShapeNode(rect: CGRect(x: 0, y: 0, width: self.size.width, height: self.size.height))
+                whiteRect.fillColor = .white
+                whiteRect.zPosition = self.UI_ZPOSITION - 1
+                
+                let fadeOut = SKAction.fadeOut(withDuration: 1.5)
+                fadeOut.timingMode = .easeIn
+                whiteRect.run(fadeOut)
+                
+                self.addChild(whiteRect)
+                self.addChild(animation)
+            }
+        ]))
+    }
+    
+    func setupAnimation(delay: TimeInterval) -> SKNode {
         // No specific time required
         let background = setupBackground()
         background.position = CGPoint(x: 650, y: 250)
@@ -45,11 +74,23 @@ public class Scene1: PreScene {
         take1.addChild(houses)
         take1.addChild(indians)
         
-        self.addChild(take1)
-
-        let text = setupText(text: "A long time ago, Guarani Indians were living on the Iguassu River banks.")
+        let infoBox = setupInfoBox(balloonNumber: 0, text: "In the past, the Kaingang tribe\n used to live in underground houses")
+        infoBox.position = CGPoint(x: self.size.width / 2, y: self.size.height / 2)
+        infoBox.alpha = 0
         
-        self.addChild(text)
+        take1.addChild(infoBox)
+        
+        let handButton = setupHandButton(infoNode: infoBox)
+        handButton.position = CGPoint(x: 500, y: 200)
+        
+        take1.run(.sequence([
+            .wait(forDuration: 3 + delay),
+            .run {
+                take1.addChild(handButton)
+            }
+        ]))
+        
+        return take1
     }
     
     func setupBackground() -> SKNode {

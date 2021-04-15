@@ -87,6 +87,7 @@ public class Scene4: PreScene {
             "They decided to run away from Mboi through the river.",
             "However, Mboi realized it and started chasing them."
         ])
+        text.position = CGPoint(x: self.size.width / 2, y: self.size.height - 200)
         
         self.addChild(text)
     }
