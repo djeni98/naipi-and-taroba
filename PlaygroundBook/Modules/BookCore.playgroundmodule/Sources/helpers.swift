@@ -32,6 +32,31 @@ public class PreScene: SKScene {
     var pageStatus = PageStatus.animation
     var handButton: SKNode!
     var nextPageButton: SKNode!
+    var nextButtonWaitTime: TimeInterval = 3
+
+//    func setupScene(texts: [(String, TimeInterval)], waitDuration: TimeInterval, fadeOutDuration: TimeInterval) {
+//        let text = setupText(texts: texts)
+//        text.position = CGPoint(x: self.size.width / 2, y: self.size.height - 200)
+//
+//        self.addChild(text)
+//
+//        self.run(.sequence([
+//            .wait(forDuration: waitDuration),
+//            .run {
+//                let animation = self.setupAnimation()
+//                let whiteRect = SKShapeNode(rect: CGRect(x: 0, y: 0, width: self.size.width, height: self.size.height))
+//                whiteRect.fillColor = .white
+//                whiteRect.zPosition = self.UI_ZPOSITION - 1
+//
+//                let fadeOut = SKAction.fadeOut(withDuration: 1.5)
+//                fadeOut.timingMode = .easeIn
+//                whiteRect.run(fadeOut)
+//
+//                self.addChild(whiteRect)
+//                self.addChild(animation)
+//            }
+//        ]))
+//    }
     
     func setupTimer() {
         let background = SKSpriteNode(color: .brown, size: CGSize(width: 100, height: 50))
@@ -62,35 +87,21 @@ public class PreScene: SKScene {
         return label
     }
     
-    func setupText(texts: [String], fontSize: CGFloat = 40, font: String? = nil) -> SKNode {
+    func setupText(texts: [(String, TimeInterval)], fontSize: CGFloat = 40, font: String? = nil) -> SKNode {
         let node = SKNode()
         
         var y = -50 * (texts.count / 2)
-        for text in texts.reversed() {
+        for (text, delay) in texts.reversed() {
             let t = self.setupText(text: text, fontSize: fontSize, font: font)
             t.position = CGPoint(x: 0, y: y)
+            t.alpha = 0
             y += 50
+
+            let fadeIn = SKAction.fadeIn(withDuration: 1)
+            t.run(.sequence([.wait(forDuration: delay), fadeIn]))
+
             node.addChild(t)
         }
-        
-        return node
-    }
-    
-    func setupInfoBox(balloonNumber: Int, text: String) -> SKNode {
-        let node = SKNode()
-        
-        let balloon = SKSpriteNode(imageNamed: "images/b-\(balloonNumber)")
-        balloon.zPosition = UI_ZPOSITION + 3
-        balloon.setScale(0.5)
-        
-        let infoText = setupParagraph(
-            text: text,
-            font: self.infoFont, fontSize: 30
-        )
-        infoText.zPosition = UI_ZPOSITION + 4
-        
-        node.addChild(infoText)
-        node.addChild(balloon)
         
         return node
     }
@@ -323,6 +334,7 @@ public class PreScene: SKScene {
         circle.zPosition = UI_ZPOSITION
         circle.strokeColor = .blue
         circle.lineWidth = 4
+        circle.alpha = 1
 
         node.addChild(circle)
         
@@ -366,7 +378,7 @@ public class PreScene: SKScene {
             
             handButton.alpha = 0
             
-            nextPageButton.run(.sequence([.wait(forDuration: 2), fadeIn]))
+            nextPageButton.run(.sequence([.wait(forDuration: nextButtonWaitTime), fadeIn]))
 
         } else if nextPageButton.contains(pos) && pageStatus == .information {
             PlaygroundPage.current.navigateTo(page: .next)

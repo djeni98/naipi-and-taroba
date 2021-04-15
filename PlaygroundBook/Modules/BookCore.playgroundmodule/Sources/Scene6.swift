@@ -22,8 +22,37 @@ public class Scene6: PreScene {
             return true
         }
     }
-    
+
     func setup() {
+        let text = setupText(texts: [
+            ("The legend tells that Naipi became a rock in the middle of the Falls", 1),
+            ("and Tarobá became a palm.", 5),
+            ("", 0),
+            ("In this way, they are fated to see each other without being able to be together again.", 7.5)
+        ])
+        text.position = CGPoint(x: self.size.width / 2, y: self.size.height - 200)
+
+        self.addChild(text)
+
+        self.run(.sequence([
+            .wait(forDuration: 3),
+            .run {
+                let animation = self.setupAnimation()
+                let whiteRect = SKShapeNode(rect: CGRect(x: 0, y: 0, width: self.size.width, height: self.size.height))
+                whiteRect.fillColor = .white
+                whiteRect.zPosition = self.UI_ZPOSITION - 1
+
+                let fadeOut = SKAction.fadeOut(withDuration: 1)
+                fadeOut.timingMode = .easeIn
+                whiteRect.run(fadeOut)
+
+                self.addChild(whiteRect)
+                self.addChild(animation)
+            }
+        ]))
+    }
+
+    func setupAnimation() -> SKNode {
         let background = SKNode()
         background.position = CGPoint(x: -150, y: 100)
         
@@ -47,26 +76,56 @@ public class Scene6: PreScene {
         background.addChild(earthAndPalm)
         
         background.run(.sequence([
-            .wait(forDuration: 1),
+            .wait(forDuration: 2),
             .move(to: CGPoint(x: 600, y: 100), duration: 1.5),
-            .wait(forDuration: 1),
+            .wait(forDuration: 1.5),
             .group([
                 .move(to: CGPoint(x: 400, y: 100), duration: 1.5),
                 .scale(to: 0.7, duration: 1.5)
             ])
         ]))
         
-        self.addChild(background)
-        
-        let text = setupText(texts: [
-            "The legend tells that Naipi became a rock in the middle of the Falls",
-            "and Tarobá became a palm.",
-            "",
-            "In this way, they are fated to see each other without being able to be together again."
-        ])
-        text.position = CGPoint(x: self.size.width / 2, y: self.size.height - 200)
-        
-        self.addChild(text)
+        let take6 = SKNode()
+
+        take6.addChild(background)
+
+        let infoBox = setupInfoBox()
+        infoBox.position = CGPoint(x: self.size.width * 0.5, y: self.size.height * 0.4)
+        infoBox.alpha = 0
+
+        take6.addChild(infoBox)
+
+        let handButton = setupHandButton(infoNode: infoBox)
+        handButton.position = CGPoint(x: self.size.width * 0.5, y: 200)
+
+        take6.run(.sequence([
+            .wait(forDuration: 10),
+            .run {
+                take6.addChild(handButton)
+            }
+        ]))
+
+        return take6
+    }
+
+    func setupInfoBox() -> SKNode {
+        let node = SKNode()
+
+        let balloon = SKSpriteNode(imageNamed: "images/b-5")
+        balloon.zPosition = UI_ZPOSITION + 3
+        balloon.setScale(0.5)
+
+        let infoText = setupParagraph(
+            text: "This legend has other versions,\n but the essence\n is Naipi and Tarobá running away\n and Mboi creating the Falls.",
+            font: self.infoFont, fontSize: 30
+        )
+        infoText.zPosition = UI_ZPOSITION + 4
+        infoText.position = CGPoint(x: 0, y: -20)
+
+        node.addChild(infoText)
+        node.addChild(balloon)
+
+        return node
     }
     
     func setupRock() -> SKNode {

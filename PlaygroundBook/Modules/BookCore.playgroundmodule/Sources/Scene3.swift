@@ -25,12 +25,36 @@ public class Scene3: PreScene {
     }
     
     func setupTake3() {
+        let text = setupText(texts: [("But Naipi met Tarobá, and these two fell in love.", 1)])
+        text.position = CGPoint(x: self.size.width / 2, y: self.size.height - 200)
+
+        self.addChild(text)
+
+        self.run(.sequence([
+            .wait(forDuration: 3.25),
+            .run {
+                let animation = self.setupAnimation()
+                let whiteRect = SKShapeNode(rect: CGRect(x: 0, y: 0, width: self.size.width, height: self.size.height))
+                whiteRect.fillColor = .white
+                whiteRect.zPosition = self.UI_ZPOSITION - 1
+
+                let fadeOut = SKAction.fadeOut(withDuration: 1)
+                fadeOut.timingMode = .easeIn
+                whiteRect.run(fadeOut)
+
+                self.addChild(whiteRect)
+                self.addChild(animation)
+            }
+        ]))
+    }
+
+    func setupAnimation() -> SKNode {
         let take3 = SKNode()
         
         let background = setupBackground()
         background.position = CGPoint(x: 700, y: 300)
         
-        let taroba = setupTarobaFront(walkDuration: 5.2)
+        let taroba = setupTarobaFront(walkDuration: 5)
         taroba.position = CGPoint(x: -100, y: 600)
         
         let moveTaroba = SKAction.move(to: CGPoint(x: self.size.width * 0.5 - 200, y: 500), duration: 4.5)
@@ -51,13 +75,43 @@ public class Scene3: PreScene {
         take3.addChild(taroba)
         take3.addChild(naipi)
         take3.addChild(hearts)
+
+        let infoBox = setupInfoBox()
+        infoBox.position = CGPoint(x: self.size.width * 0.25, y: self.size.height * 0.6)
+        infoBox.alpha = 0
+
+        take3.addChild(infoBox)
+
+        let handButton = setupHandButton(infoNode: infoBox)
+        handButton.position = CGPoint(x: self.size.width / 2, y: 250)
+
+        take3.run(.sequence([
+            .wait(forDuration: 7.5),
+            .run {
+                take3.addChild(handButton)
+            }
+        ]))
         
-        self.addChild(take3)
-        
-        let text = setupText(text: "But Naipi met Tarobá, and these two fell in love.")
-        text.position = CGPoint(x: self.size.width / 2, y: self.size.height - 200)
-        
-        self.addChild(text)
+        return take3
+    }
+
+    func setupInfoBox() -> SKNode {
+        let node = SKNode()
+
+        let balloon = SKSpriteNode(imageNamed: "images/b-2")
+        balloon.zPosition = UI_ZPOSITION + 3
+        balloon.setScale(0.5)
+
+        let infoText = setupParagraph(
+            text: "The Kaingangs use body paint\n only in rituals.",
+            font: self.infoFont, fontSize: 30
+        )
+        infoText.zPosition = UI_ZPOSITION + 4
+
+        node.addChild(infoText)
+        node.addChild(balloon)
+
+        return node
     }
     
     func setupBackground() -> SKNode {

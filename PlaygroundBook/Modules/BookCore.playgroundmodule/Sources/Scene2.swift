@@ -24,21 +24,52 @@ public class Scene2: PreScene {
     }
     
     func setupTake2() {
-        // 6 seconds
+        let text = setupText(
+            texts: [
+                ("One year, they had to dedicate the young woman Naipi to Mboi,", 1),
+                ("a serpent god who lived in the river.", 4)
+            ]
+        )
+        text.position = CGPoint(x: self.size.width / 2, y: self.size.height - 200)
+
+        self.addChild(text)
+
+        nextButtonWaitTime = 3.5
+
+        self.run(.sequence([
+            .wait(forDuration: 4.5),
+            .run {
+                let animation = self.setupAnimation()
+                let whiteRect = SKShapeNode(rect: CGRect(x: 0, y: 0, width: self.size.width, height: self.size.height))
+                whiteRect.fillColor = .white
+                whiteRect.zPosition = self.UI_ZPOSITION - 1
+
+                let fadeOut = SKAction.fadeOut(withDuration: 1.5)
+                fadeOut.timingMode = .easeIn
+                whiteRect.run(fadeOut)
+
+                self.addChild(whiteRect)
+                self.addChild(animation)
+            }
+        ]))
+    }
+
+    func setupAnimation() -> SKNode {
         let background = setupBackground()
         background.position = CGPoint(x: 700, y: 300)
         
         let mboi = setupMboi()
         mboi.position = CGPoint(x: self.size.width * 1.3, y: 300)
         
-        let moveMboi = SKAction.move(to: CGPoint(x: self.size.width * 0.75, y: 300), duration: 6)
+        let moveMboi = SKAction.move(to: CGPoint(x: self.size.width * 0.75, y: 300), duration: 5)
         moveMboi.timingMode = .easeIn
         mboi.run(.sequence([.wait(forDuration: 1), moveMboi]))
-        
-        let naipi = setupNaipi(forwardDuration: 3.2)
+
+        let moveTimeInterval: TimeInterval = 3.5
+        let naipi = setupNaipi(forwardDuration: moveTimeInterval + 0.25)
         naipi.position = CGPoint(x: 0 - self.size.width * 0.1, y: 675)
         
-        let moveNaipi = SKAction.move(to: CGPoint(x: self.size.width * 0.25, y: 675), duration: 3)
+        let moveNaipi = SKAction.move(to: CGPoint(x: self.size.width * 0.25, y: 675), duration: moveTimeInterval)
         moveNaipi.timingMode = .easeOut
         naipi.run(moveNaipi)
 
@@ -47,13 +78,46 @@ public class Scene2: PreScene {
         take2.addChild(background)
         take2.addChild(mboi)
         take2.addChild(naipi)
+
+        let infoBox = setupInfoBox()
+        infoBox.position = CGPoint(x: self.size.width * 0.5, y: self.size.height * 0.2)
+        infoBox.alpha = 0
+
+        take2.addChild(infoBox)
+
+        let handButton = setupHandButton(infoNode: infoBox)
+        handButton.position = CGPoint(x: 1500, y: 400)
+
+        take2.run(.sequence([
+            .wait(forDuration: 8),
+            .run {
+                take2.addChild(handButton)
+            }
+        ]))
         
-        self.addChild(take2)
-        
-        let text = setupText(texts: ["One year, they had to dedicate the young woman Naipi to Mboi,", "a serpent god who lived in the river."])
-        text.position = CGPoint(x: self.size.width / 2, y: self.size.height - 200)
-        
-        self.addChild(text)
+        return take2
+    }
+
+    func setupInfoBox() -> SKNode {
+        let node = SKNode()
+
+        let balloon = SKSpriteNode(imageNamed: "images/b-1")
+        balloon.zPosition = UI_ZPOSITION + 3
+        balloon.setScale(0.5)
+//        balloon.yScale = -1 * balloon.yScale
+//        balloon.xScale = -1 * balloon.xScale
+
+        let infoText = setupParagraph(
+            text: "Mboi was the god of the waters\n and he protected the Iguazu river.",
+            font: self.infoFont, fontSize: 30
+        )
+        infoText.zPosition = UI_ZPOSITION + 4
+        infoText.position = CGPoint(x: -50, y: -40)
+
+        node.addChild(infoText)
+        node.addChild(balloon)
+
+        return node
     }
     
     func setupBackground() -> SKNode {

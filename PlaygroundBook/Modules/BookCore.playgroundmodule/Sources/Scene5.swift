@@ -26,6 +26,35 @@ public class Scene5: PreScene {
     }
     
     func setupPart1() {
+        let text = setupText(texts: [
+            ("Mboi couldn’t reach Naipi and Tarobá,", 1),
+            ("so he cracked the earth to stop them, creating the Falls.", 4),
+            ("", 0),
+            ("Naipi and Tarobá fell inside it and were never seen anymore.", 10)
+        ])
+        text.position = CGPoint(x: self.size.width / 2, y: self.size.height - 200)
+
+        self.addChild(text)
+
+        self.run(.sequence([
+            .wait(forDuration: 3),
+            .run {
+                let animation = self.setupAnimation()
+                let whiteRect = SKShapeNode(rect: CGRect(x: 0, y: 0, width: self.size.width, height: self.size.height))
+                whiteRect.fillColor = .white
+                whiteRect.zPosition = self.UI_ZPOSITION - 1
+
+                let fadeOut = SKAction.fadeOut(withDuration: 1.5)
+                fadeOut.timingMode = .easeIn
+                whiteRect.run(fadeOut)
+
+                self.addChild(whiteRect)
+                self.addChild(animation)
+            }
+        ]))
+    }
+
+    func setupAnimation() -> SKNode {
         let background = SKNode()
         
         let river = setupRiverBackground(extend: true)
@@ -124,29 +153,49 @@ public class Scene5: PreScene {
             }
         ]))
         
-        // Adicionar os Naipi e Taroba
-        // Naipi e Taroba caindo
-        
         let take4 = SKNode()
         
         take4.addChild(background)
         
         take4.addChild(mboiCharacter)
         take4.addChild(naipiAndTaroba)
-        
-        // naipiAndTaroba.run(moveCharacters)
-        
-        self.addChild(take4)
-        
-        let text = setupText(texts: [
-            "Mboi couldn’t reach Naipi and Tarobá,",
-            "so he cracked the earth to stop them, creating the Falls.",
-            "",
-            "Naipi and Tarobá fell inside it and were never seen anymore."
-        ])
-        text.position = CGPoint(x: self.size.width / 2, y: self.size.height - 200)
-        
-        self.addChild(text)
+
+        let infoBox = setupInfoBox()
+        infoBox.position = CGPoint(x: self.size.width * 0.3, y: self.size.height / 2)
+        infoBox.alpha = 0
+
+        take4.addChild(infoBox)
+
+        let handButton = setupHandButton(infoNode: infoBox)
+        handButton.position = CGPoint(x: self.size.width * 0.65, y: 300)
+
+        take4.run(.sequence([
+            .wait(forDuration: 13),
+            .run {
+                take4.addChild(handButton)
+            }
+        ]))
+
+        return take4
+    }
+
+    func setupInfoBox() -> SKNode {
+        let node = SKNode()
+
+        let balloon = SKSpriteNode(imageNamed: "images/b-4")
+        balloon.zPosition = UI_ZPOSITION + 3
+        balloon.setScale(0.5)
+
+        let infoText = setupParagraph(
+            text: "The Iguazu Falls are located\n between Argentina and Brazil.",
+            font: self.infoFont, fontSize: 30
+        )
+        infoText.zPosition = UI_ZPOSITION + 4
+
+        node.addChild(infoText)
+        node.addChild(balloon)
+
+        return node
     }
     
     func setupEarthBackground(crackWaitTime: TimeInterval) -> SKNode {

@@ -23,27 +23,22 @@ public class Scene1: PreScene {
     }
     
     func setupTake1() {
-        let str = "A long time ago, Kaingang Indigenous were living around the Iguazu River banks."
-        let text = setupText(text: str)
+        let text = setupText(texts: [("A long time ago, Kaingang Indigenous were living around the Iguazu River banks.", 1)])
         text.position = CGPoint(x: self.size.width / 2, y: self.size.height - 200)
         
-        text.alpha = 0
-        text.run(.sequence([
-            .wait(forDuration: 1),
-            .fadeIn(withDuration: 1)
-        ]))
-        
         self.addChild(text)
-        
+
+        nextButtonWaitTime = 3.5
+
         self.run(.sequence([
-            .wait(forDuration: 3),
+            .wait(forDuration: 3.5),
             .run {
-                let animation = self.setupAnimation(delay: 3)
+                let animation = self.setupAnimation()
                 let whiteRect = SKShapeNode(rect: CGRect(x: 0, y: 0, width: self.size.width, height: self.size.height))
                 whiteRect.fillColor = .white
                 whiteRect.zPosition = self.UI_ZPOSITION - 1
                 
-                let fadeOut = SKAction.fadeOut(withDuration: 1.5)
+                let fadeOut = SKAction.fadeOut(withDuration: 1)
                 fadeOut.timingMode = .easeIn
                 whiteRect.run(fadeOut)
                 
@@ -53,7 +48,7 @@ public class Scene1: PreScene {
         ]))
     }
     
-    func setupAnimation(delay: TimeInterval) -> SKNode {
+    func setupAnimation() -> SKNode {
         // No specific time required
         let background = setupBackground()
         background.position = CGPoint(x: 650, y: 250)
@@ -74,7 +69,7 @@ public class Scene1: PreScene {
         take1.addChild(houses)
         take1.addChild(indians)
         
-        let infoBox = setupInfoBox(balloonNumber: 0, text: "In the past, the Kaingang tribe\n used to live in underground houses")
+        let infoBox = setupInfoBox()
         infoBox.position = CGPoint(x: self.size.width / 2, y: self.size.height / 2)
         infoBox.alpha = 0
         
@@ -84,13 +79,32 @@ public class Scene1: PreScene {
         handButton.position = CGPoint(x: 500, y: 200)
         
         take1.run(.sequence([
-            .wait(forDuration: 3 + delay),
+            .wait(forDuration: 4),
             .run {
                 take1.addChild(handButton)
             }
         ]))
         
         return take1
+    }
+
+    func setupInfoBox() -> SKNode {
+        let node = SKNode()
+
+        let balloon = SKSpriteNode(imageNamed: "images/b-0")
+        balloon.zPosition = UI_ZPOSITION + 3
+        balloon.setScale(0.5)
+
+        let infoText = setupParagraph(
+            text: "In the past, the Kaingang tribe\n used to live in underground houses",
+            font: self.infoFont, fontSize: 30
+        )
+        infoText.zPosition = UI_ZPOSITION + 4
+
+        node.addChild(infoText)
+        node.addChild(balloon)
+
+        return node
     }
     
     func setupBackground() -> SKNode {

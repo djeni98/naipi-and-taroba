@@ -25,6 +25,36 @@ public class Scene4: PreScene {
     }
     
     func setupTake4() {
+        let text = setupText(texts: [
+            ("They decided to run away from Mboi through the river.", 1),
+            ("", 0),
+            ("However, Mboi realized it and started chasing them.", 5)
+        ])
+        text.position = CGPoint(x: self.size.width / 2, y: self.size.height - 200)
+
+        self.addChild(text)
+
+        nextButtonWaitTime = 3.5
+
+        self.run(.sequence([
+            .wait(forDuration: 3),
+            .run {
+                let animation = self.setupAnimation()
+                let whiteRect = SKShapeNode(rect: CGRect(x: 0, y: 0, width: self.size.width, height: self.size.height))
+                whiteRect.fillColor = .white
+                whiteRect.zPosition = self.UI_ZPOSITION - 1
+
+                let fadeOut = SKAction.fadeOut(withDuration: 1.5)
+                fadeOut.timingMode = .easeIn
+                whiteRect.run(fadeOut)
+
+                self.addChild(whiteRect)
+                self.addChild(animation)
+            }
+        ]))
+    }
+
+    func setupAnimation() -> SKNode {
         // 20 seconds
         
         let river = setupRiverBackground()
@@ -74,21 +104,49 @@ public class Scene4: PreScene {
         moveMboi.timingMode = .easeIn
         
         mboiCharacter.run(.sequence([.wait(forDuration: 1), moveMboi]))
+        mboiCharacter.run(.sequence([.wait(forDuration: 10.5), .fadeOut(withDuration: 0)]))
         
         let take4 = SKNode()
         
         take4.addChild(river)
         take4.addChild(mboiCharacter)
         take4.addChild(naipiAndTaroba)
-        
-        self.addChild(take4)
-        
-        let text = setupText(texts: [
-            "They decided to run away from Mboi through the river.",
-            "However, Mboi realized it and started chasing them."
-        ])
-        text.position = CGPoint(x: self.size.width / 2, y: self.size.height - 200)
-        
-        self.addChild(text)
+
+        let infoBox = setupInfoBox()
+        infoBox.position = CGPoint(x: self.size.width * 0.7, y: self.size.height / 2)
+        infoBox.alpha = 0
+
+        take4.addChild(infoBox)
+
+        let handButton = setupHandButton(infoNode: infoBox)
+        handButton.position = CGPoint(x: self.size.width * 0.5, y: 200)
+
+        take4.run(.sequence([
+            .wait(forDuration: 12),
+            .run {
+                take4.addChild(handButton)
+            }
+        ]))
+
+        return take4
+    }
+
+    func setupInfoBox() -> SKNode {
+        let node = SKNode()
+
+        let balloon = SKSpriteNode(imageNamed: "images/b-3")
+        balloon.zPosition = UI_ZPOSITION + 3
+        balloon.setScale(0.5)
+
+        let infoText = setupParagraph(
+            text: "The Iguazu name means 'big river':\n 'y' (water, river) and 'guasu' (big)",
+            font: self.infoFont, fontSize: 30
+        )
+        infoText.zPosition = UI_ZPOSITION + 4
+
+        node.addChild(infoText)
+        node.addChild(balloon)
+
+        return node
     }
 }
