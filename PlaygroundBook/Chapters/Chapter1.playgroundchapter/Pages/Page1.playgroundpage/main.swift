@@ -1,9 +1,3 @@
-/*: Page one
- 
- A long time ago, Guarani Indians were living on the Iguassu River banks.
- 
- */
-
 //#-hidden-code
 //
 //  See LICENSE folder for this template’s licensing information.

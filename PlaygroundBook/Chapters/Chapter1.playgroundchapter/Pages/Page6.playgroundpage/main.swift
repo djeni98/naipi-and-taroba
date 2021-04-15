@@ -1,11 +1,3 @@
-/*: Page six
- 
- The legend tells that Naipi became a rock in the middle of the Falls and Tarobá became a palm.
- 
- In this way, they are fated to see each other without being able to be together again.
- 
- */
-
 //#-hidden-code
 //
 //  See LICENSE folder for this template’s licensing information.

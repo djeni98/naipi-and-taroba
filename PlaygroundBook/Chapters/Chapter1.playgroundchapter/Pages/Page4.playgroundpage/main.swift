@@ -1,11 +1,3 @@
-/*: Page four
- 
- They decided to run away from Mboi through the river.
- 
- However, Mboi realized it and started chasing them.
- 
- */
-
 //#-hidden-code
 //
 //  See LICENSE folder for this template’s licensing information.
