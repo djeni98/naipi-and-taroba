@@ -134,7 +134,7 @@ public class Scene4: PreScene {
     func setupInfoBox() -> SKNode {
         let node = SKNode()
 
-        let balloon = SKSpriteNode(imageNamed: "images/b-3")
+        let balloon = SKSpriteNode(imageNamed: "b-3")
         balloon.zPosition = UI_ZPOSITION + 3
         balloon.setScale(0.5)
 

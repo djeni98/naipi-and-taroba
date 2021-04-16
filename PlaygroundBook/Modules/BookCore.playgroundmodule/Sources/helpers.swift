@@ -129,16 +129,16 @@ public class PreScene: SKScene {
         
         let character = SKNode()
         
-        let rightArm = SKSpriteNode(imageNamed: "images/right-arm")
+        let rightArm = SKSpriteNode(imageNamed: "right-arm")
         rightArm.anchorPoint = CGPoint(x: 0.2, y: 0.8)
         rightArm.position = CGPoint(x: 80, y: -120)
         rightArm.zPosition = 2 + CHARACTER_ZPOSITION
         
-        let body = SKSpriteNode(imageNamed: "images/\(prefix)-0")
+        let body = SKSpriteNode(imageNamed: "\(prefix)-0")
         body.position = CGPoint.zero
         body.zPosition = 4 + CHARACTER_ZPOSITION
         
-        let leftArm = SKSpriteNode(imageNamed: "images/left-arm")
+        let leftArm = SKSpriteNode(imageNamed: "left-arm")
         leftArm.anchorPoint = CGPoint(x: 0.5, y: 1)
         leftArm.position = CGPoint(x: -20, y: -100)
         leftArm.zPosition = 6 + CHARACTER_ZPOSITION
@@ -147,7 +147,7 @@ public class PreScene: SKScene {
             rightArm.position = CGPoint(x: 72, y: -120)
             leftArm.position = CGPoint(x: -32, y: -104)
             
-            let hair = SKSpriteNode(imageNamed: "images/n-hair")
+            let hair = SKSpriteNode(imageNamed: "n-hair")
             hair.position = CGPoint.zero
             hair.zPosition = 1 + CHARACTER_ZPOSITION
             
@@ -161,11 +161,11 @@ public class PreScene: SKScene {
         if animateBody {
             var faceAnimationList = [SKTexture]()
             
-            faceAnimationList.append(SKTexture(imageNamed: "images/\(prefix)-0"))
-            faceAnimationList.append(SKTexture(imageNamed: "images/\(prefix)-0"))
-            faceAnimationList.append(SKTexture(imageNamed: "images/\(prefix)-1"))
-            faceAnimationList.append(SKTexture(imageNamed: "images/\(prefix)-2"))
-            faceAnimationList.append(SKTexture(imageNamed: "images/\(prefix)-1"))
+            faceAnimationList.append(SKTexture(imageNamed: "\(prefix)-0"))
+            faceAnimationList.append(SKTexture(imageNamed: "\(prefix)-0"))
+            faceAnimationList.append(SKTexture(imageNamed: "\(prefix)-1"))
+            faceAnimationList.append(SKTexture(imageNamed: "\(prefix)-2"))
+            faceAnimationList.append(SKTexture(imageNamed: "\(prefix)-1"))
             
             let animateFace = SKAction.animate(with: faceAnimationList, timePerFrame: 0.2, resize: true, restore: true)
             
@@ -194,10 +194,10 @@ public class PreScene: SKScene {
     func setupRiverForeground(prefix: String) -> SKNode {
         let river = SKNode()
         
-        let front = SKSpriteNode(imageNamed: "images/\(prefix)-0")
+        let front = SKSpriteNode(imageNamed: "\(prefix)-0")
         front.zPosition = FOREGROUNG_ZPOSITION
         
-        let animationList = [SKTexture(imageNamed: "images/\(prefix)-0"), SKTexture(imageNamed: "images/\(prefix)-1")]
+        let animationList = [SKTexture(imageNamed: "\(prefix)-0"), SKTexture(imageNamed: "\(prefix)-1")]
         let animateRiver = SKAction.animate(with: animationList, timePerFrame: 1, resize: true, restore: true)
         front.run(.repeatForever(animateRiver))
         
@@ -211,7 +211,7 @@ public class PreScene: SKScene {
     func setupRiverBackground(extend: Bool = false) -> SKNode {
         let river = SKNode()
         
-        let back = SKSpriteNode(imageNamed: "images/river-1")
+        let back = SKSpriteNode(imageNamed: "river-1")
         back.zPosition = 3
         
         let move = SKAction.sequence([.move(to: CGPoint(x: 200, y: 20), duration: 2), .move(to: CGPoint(x: 0, y: 0), duration: 2)])
@@ -239,14 +239,14 @@ public class PreScene: SKScene {
     func setupMboi() -> SKNode {
         let mboiNode = SKNode()
         
-        let mboi = SKSpriteNode(imageNamed: "images/mboi-curve-0")
+        let mboi = SKSpriteNode(imageNamed: "mboi-curve-0")
         mboi.zPosition = 5 + CHARACTER_ZPOSITION
         
         var animationMboi = [SKTexture]()
         
-        animationMboi.append(SKTexture(imageNamed: "images/mboi-curve-0"))
-        animationMboi.append(SKTexture(imageNamed: "images/mboi-curve-1"))
-        animationMboi.append(SKTexture(imageNamed: "images/mboi-curve-2"))
+        animationMboi.append(SKTexture(imageNamed: "mboi-curve-0"))
+        animationMboi.append(SKTexture(imageNamed: "mboi-curve-1"))
+        animationMboi.append(SKTexture(imageNamed: "mboi-curve-2"))
         
         let animateMboi = SKAction.animate(with: animationMboi, timePerFrame: 0.2, resize: true, restore: true)
         
@@ -261,11 +261,11 @@ public class PreScene: SKScene {
     }
     
     func setupCanoe() -> SKNode {
-        let front = SKSpriteNode(imageNamed: "images/canoe-front")
+        let front = SKSpriteNode(imageNamed: "canoe-front")
         front.position = CGPoint(x: 0, y: -214)
         front.zPosition = 5 + CHARACTER_ZPOSITION
         
-        let back = SKSpriteNode(imageNamed: "images/canoe-back")
+        let back = SKSpriteNode(imageNamed: "canoe-back")
         back.position = CGPoint(x: -40, y: -128)
         back.zPosition = 0 + CHARACTER_ZPOSITION
         
@@ -289,7 +289,7 @@ public class PreScene: SKScene {
     func setupFallsLines(hideMiddleLine: Bool = false) -> SKNode {
         let lines = SKNode()
         
-        let l0 = SKSpriteNode(imageNamed: "images/waterfall-line")
+        let l0 = SKSpriteNode(imageNamed: "waterfall-line")
         l0.zPosition = CHARACTER_ZPOSITION - 1
         l0.position = CGPoint(x: -2 * l0.size.width, y: -212 * 2)
         
@@ -321,7 +321,7 @@ public class PreScene: SKScene {
     func setupHandButton(infoNode: SKNode, setupNextPage: Bool = true) -> SKNode {
         let node = SKNode()
         
-        let hand = SKSpriteNode(imageNamed: "images/click-hand")
+        let hand = SKSpriteNode(imageNamed: "click-hand")
         hand.zPosition = UI_ZPOSITION + 1
         // hand.position = CGPoint(x: 50, y: -200)
         
@@ -348,7 +348,7 @@ public class PreScene: SKScene {
         self.infoTextNode = infoNode
 
         if setupNextPage {
-            let nextButton = SKSpriteNode(imageNamed: "images/next-page-2")
+            let nextButton = SKSpriteNode(imageNamed: "next-page-2")
             nextButton.zPosition = UI_ZPOSITION + 7
             nextButton.anchorPoint = CGPoint(x: 1, y: 0)
             nextButton.position = CGPoint(x: self.size.width + 25, y: -25)

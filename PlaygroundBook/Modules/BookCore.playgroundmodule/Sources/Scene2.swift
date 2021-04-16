@@ -101,7 +101,7 @@ public class Scene2: PreScene {
     func setupInfoBox() -> SKNode {
         let node = SKNode()
 
-        let balloon = SKSpriteNode(imageNamed: "images/b-1")
+        let balloon = SKSpriteNode(imageNamed: "b-1")
         balloon.zPosition = UI_ZPOSITION + 3
         balloon.setScale(0.5)
 //        balloon.yScale = -1 * balloon.yScale
@@ -123,12 +123,12 @@ public class Scene2: PreScene {
     func setupBackground() -> SKNode {
         let background = SKNode()
         
-        let earth = SKSpriteNode(imageNamed: "images/earth-1-rescale")
+        let earth = SKSpriteNode(imageNamed: "earth-1-rescale")
         earth.position = CGPoint(x: self.size.width * 0.25, y: 500)
         earth.zPosition = 1
         background.addChild(earth)
         
-        let river = SKSpriteNode(imageNamed: "images/river-1")
+        let river = SKSpriteNode(imageNamed: "river-1")
         river.position = CGPoint(x: 0, y: -500)
         river.zPosition = 2
         background.addChild(river)
@@ -141,7 +141,7 @@ public class Scene2: PreScene {
     override func setupMboi() -> SKNode {
         let mboiNode = SKNode()
         
-        let mboi = SKSpriteNode(imageNamed: "images/mboi-curve-1-crop")
+        let mboi = SKSpriteNode(imageNamed: "mboi-curve-1-crop")
         mboi.position = CGPoint(x: 0, y: 200)
         mboi.zPosition = 10
         
@@ -155,11 +155,11 @@ public class Scene2: PreScene {
         // mboi.run(.repeatForever(.sequence([rotateLeft, moveLeft, rotateRight, moveRight])))
         mboi.run(.repeatForever(.sequence(groups)))
         
-        let river = SKSpriteNode(imageNamed: "images/mboi-river-0")
+        let river = SKSpriteNode(imageNamed: "mboi-river-0")
         river.position = CGPoint(x: 150, y: -400)
         river.zPosition = 12
 
-        let animationList = [SKTexture(imageNamed: "images/mboi-river-0"), SKTexture(imageNamed: "images/mboi-river-1")]
+        let animationList = [SKTexture(imageNamed: "mboi-river-0"), SKTexture(imageNamed: "mboi-river-1")]
         let animateRiver = SKAction.animate(with: animationList, timePerFrame: 1, resize: true, restore: true)
         river.run(.repeatForever(animateRiver))
         
@@ -179,30 +179,30 @@ public class Scene2: PreScene {
     func setupNaipiFront(walkDuration: TimeInterval) -> SKNode {
         let character = SKNode()
         
-        let hair = SKSpriteNode(imageNamed: "images/n-hair")
+        let hair = SKSpriteNode(imageNamed: "n-hair")
         hair.position = CGPoint(x: 0, y: 0)
         hair.zPosition = 3
         
-        let rightArm = SKSpriteNode(imageNamed: "images/arm-front")
+        let rightArm = SKSpriteNode(imageNamed: "arm-front")
         rightArm.anchorPoint = CGPoint(x: 0.7, y: 0.9)
         rightArm.position = CGPoint(x: 74, y: -123)
         rightArm.zPosition = 4
         
-        let body = SKSpriteNode(imageNamed: "images/n-body-front")
+        let body = SKSpriteNode(imageNamed: "n-body-front")
         body.position = CGPoint(x: 0, y: 0)
         body.zPosition = 5
         
-        let leftArm = SKSpriteNode(imageNamed: "images/arm-front")
+        let leftArm = SKSpriteNode(imageNamed: "arm-front")
         leftArm.anchorPoint = CGPoint(x: 0.7, y: 0.9)
         leftArm.position = CGPoint(x: -42, y: -125)
         leftArm.zPosition = 6
         
-        let rightLeg = SKSpriteNode(imageNamed: "images/foot-front")
+        let rightLeg = SKSpriteNode(imageNamed: "foot-front")
         rightLeg.anchorPoint = CGPoint(x: 0.5, y: 1)
         rightLeg.position = CGPoint(x: 55, y: -240)
         rightLeg.zPosition = 3
         
-        let leftLeg = SKSpriteNode(imageNamed: "images/foot-front")
+        let leftLeg = SKSpriteNode(imageNamed: "foot-front")
         leftLeg.anchorPoint = CGPoint(x: 0.5, y: 1)
         leftLeg.position = CGPoint(x: -24, y: -240)
         leftLeg.zPosition = 4

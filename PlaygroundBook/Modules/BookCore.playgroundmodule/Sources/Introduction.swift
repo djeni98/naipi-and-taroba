@@ -36,7 +36,7 @@ public class Introduction: SKScene {
         howItWorks.text = "How this playground works"
         howItWorks.position.y = self.size.height / 2 - 100
         howItWorks.alpha = 0
-        howItWorks.run(.sequence([.wait(forDuration: 0.5), .fadeIn(withDuration: 1)]))
+        howItWorks.run(.sequence([.wait(forDuration: 0.5), .fadeIn(withDuration: 0.5)]))
 
         node.addChild(howItWorks)
 
@@ -47,7 +47,7 @@ public class Introduction: SKScene {
         handRule.position.y = self.size.height / 2 - 250
         handRule.alpha = 0
         handRule.fontSize = 25
-        handRule.run(.sequence([.wait(forDuration: 2), .fadeIn(withDuration: 1)]))
+        handRule.run(.sequence([.wait(forDuration: 1.5), .fadeIn(withDuration: 0.5)]))
 
         node.addChild(handRule)
 
@@ -62,7 +62,7 @@ public class Introduction: SKScene {
 
         handNode.addChild(circle)
 
-        let hand = SKSpriteNode(imageNamed: "images/click-hand")
+        let hand = SKSpriteNode(imageNamed: "click-hand")
         hand.zPosition = 4
         let animate = SKAction.sequence([
             .scale(to: 1.2, duration: 0.5),
@@ -76,11 +76,12 @@ public class Introduction: SKScene {
         self.handButton = handNode
 
         handNode.position = CGPoint(x: self.size.width / 2, y: self.size.height / 2)
-        handNode.alpha = 1
+        handNode.alpha = 0
 
         node.run(.sequence([
-            .wait(forDuration: 3),
+            .wait(forDuration: 2.5),
             .run {
+                handNode.run(.fadeIn(withDuration: 0.5))
                 self.addChild(handNode)
             }
         ]))
@@ -122,7 +123,7 @@ public class Introduction: SKScene {
             pageRuleNode.addChild(pageRule2)
             node.addChild(pageRuleNode)
 
-            let nextButton = SKSpriteNode(imageNamed: "images/next-page-2")
+            let nextButton = SKSpriteNode(imageNamed: "next-page-2")
             nextButton.anchorPoint = CGPoint(x: 1, y: 0)
             nextButton.position = CGPoint(x: self.size.width + 25, y: -25)
             nextButton.setScale(0.1)

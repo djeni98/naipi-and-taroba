@@ -98,7 +98,7 @@ public class Scene3: PreScene {
     func setupInfoBox() -> SKNode {
         let node = SKNode()
 
-        let balloon = SKSpriteNode(imageNamed: "images/b-2")
+        let balloon = SKSpriteNode(imageNamed: "b-2")
         balloon.zPosition = UI_ZPOSITION + 3
         balloon.setScale(0.5)
 
@@ -119,7 +119,7 @@ public class Scene3: PreScene {
     func setupBackground() -> SKNode {
         let background = SKNode()
         
-        let earth = SKSpriteNode(imageNamed: "images/earth-2-rescale")
+        let earth = SKSpriteNode(imageNamed: "earth-2-rescale")
         earth.position = CGPoint(x: self.size.width * 0.3, y: 0)
         earth.zPosition = 1
         
@@ -168,26 +168,26 @@ public class Scene3: PreScene {
     func setupTarobaFront(walkDuration: TimeInterval) -> SKNode {
         let character = SKNode()
         
-        let rightArm = SKSpriteNode(imageNamed: "images/arm-front")
+        let rightArm = SKSpriteNode(imageNamed: "arm-front")
         rightArm.anchorPoint = CGPoint(x: 0.7, y: 0.9)
         rightArm.position = CGPoint(x: 74, y: -123)
         rightArm.zPosition = 4
         
-        let body = SKSpriteNode(imageNamed: "images/t-body-front")
+        let body = SKSpriteNode(imageNamed: "t-body-front")
         body.position = CGPoint(x: 0, y: 0)
         body.zPosition = 5
         
-        let leftArm = SKSpriteNode(imageNamed: "images/arm-front")
+        let leftArm = SKSpriteNode(imageNamed: "arm-front")
         leftArm.anchorPoint = CGPoint(x: 0.7, y: 0.9)
         leftArm.position = CGPoint(x: -42, y: -125)
         leftArm.zPosition = 6
         
-        let rightLeg = SKSpriteNode(imageNamed: "images/foot-front")
+        let rightLeg = SKSpriteNode(imageNamed: "foot-front")
         rightLeg.anchorPoint = CGPoint(x: 0.5, y: 1)
         rightLeg.position = CGPoint(x: 55, y: -240)
         rightLeg.zPosition = 3
         
-        let leftLeg = SKSpriteNode(imageNamed: "images/foot-front")
+        let leftLeg = SKSpriteNode(imageNamed: "foot-front")
         leftLeg.anchorPoint = CGPoint(x: 0.5, y: 1)
         leftLeg.position = CGPoint(x: -24, y: -240)
         leftLeg.zPosition = 4
@@ -225,30 +225,30 @@ public class Scene3: PreScene {
     func setupNaipiBack(walkDuration: TimeInterval) -> SKNode {
         let character = SKNode()
         
-        let rightArm = SKSpriteNode(imageNamed: "images/arm-back")
+        let rightArm = SKSpriteNode(imageNamed: "arm-back")
         rightArm.anchorPoint = CGPoint(x: 0.7, y: 0.9)
         rightArm.position = CGPoint(x: 48, y: -114)
         rightArm.zPosition = 3
         
-        let body = SKSpriteNode(imageNamed: "images/n-only-body-back")
+        let body = SKSpriteNode(imageNamed: "n-only-body-back")
         body.position = CGPoint(x: 0, y: 0)
         body.zPosition = 5
         
-        let leftArm = SKSpriteNode(imageNamed: "images/arm-back")
+        let leftArm = SKSpriteNode(imageNamed: "arm-back")
         leftArm.anchorPoint = CGPoint(x: 0.7, y: 0.9)
         leftArm.position = CGPoint(x: -55, y: -125)
         leftArm.zPosition = 6
         
-        let hair = SKSpriteNode(imageNamed: "images/n-hair-back")
+        let hair = SKSpriteNode(imageNamed: "n-hair-back")
         hair.position = CGPoint(x: 0, y: 0)
         hair.zPosition = 7
         
-        let rightLeg = SKSpriteNode(imageNamed: "images/foot-back")
+        let rightLeg = SKSpriteNode(imageNamed: "foot-back")
         rightLeg.anchorPoint = CGPoint(x: 0.5, y: 1)
         rightLeg.position = CGPoint(x: 30, y: -240)
         rightLeg.zPosition = 3
         
-        let leftLeg = SKSpriteNode(imageNamed: "images/foot-back")
+        let leftLeg = SKSpriteNode(imageNamed: "foot-back")
         leftLeg.anchorPoint = CGPoint(x: 0.5, y: 1)
         leftLeg.position = CGPoint(x: -41, y: -240)
         leftLeg.zPosition = 4
@@ -287,17 +287,17 @@ public class Scene3: PreScene {
     func setupRedHearts(waitTime: TimeInterval) -> SKNode {
         let hearts = SKNode()
         
-        let h0 = SKSpriteNode(imageNamed: "images/red-heart")
+        let h0 = SKSpriteNode(imageNamed: "red-heart")
         h0.zPosition = 15
         h0.alpha = 0
         
-        let h1 = SKSpriteNode(imageNamed: "images/red-heart")
+        let h1 = SKSpriteNode(imageNamed: "red-heart")
         h1.position = CGPoint(x: -100, y: -200)
         h1.zPosition = 15
         h1.alpha = 0
         h1.setScale(0.75)
         
-        let h2 = SKSpriteNode(imageNamed: "images/red-heart")
+        let h2 = SKSpriteNode(imageNamed: "red-heart")
         h2.position = CGPoint(x: 100, y: -150)
         h2.zPosition = 15
         h2.alpha = 0

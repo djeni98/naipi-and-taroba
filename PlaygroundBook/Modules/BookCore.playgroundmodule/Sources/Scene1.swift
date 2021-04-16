@@ -91,7 +91,7 @@ public class Scene1: PreScene {
     func setupInfoBox() -> SKNode {
         let node = SKNode()
 
-        let balloon = SKSpriteNode(imageNamed: "images/b-0")
+        let balloon = SKSpriteNode(imageNamed: "b-0")
         balloon.zPosition = UI_ZPOSITION + 3
         balloon.setScale(0.5)
 
@@ -111,12 +111,12 @@ public class Scene1: PreScene {
     func setupBackground() -> SKNode {
         let background = SKNode()
         
-        let river = SKSpriteNode(imageNamed: "images/river-0-rescale")
+        let river = SKSpriteNode(imageNamed: "river-0-rescale")
         river.position = CGPoint(x: self.size.width * 0.9, y: 0)
         river.zPosition = 1
         background.addChild(river)
         
-        let earth = SKSpriteNode(imageNamed: "images/earth-0-rescale")
+        let earth = SKSpriteNode(imageNamed: "earth-0-rescale")
         earth.position = CGPoint(x: 0 + self.size.width * 0.1, y: 100)
         earth.zPosition = 2
         background.addChild(earth)
@@ -128,19 +128,19 @@ public class Scene1: PreScene {
     func setupTrees() -> SKNode {
         let trees = SKNode()
         
-        let t0 = SKSpriteNode(imageNamed: "images/tree-0")
+        let t0 = SKSpriteNode(imageNamed: "tree-0")
         t0.position = CGPoint(x: -200, y: -88)
         t0.zPosition = 5
         
-        let t1 = SKSpriteNode(imageNamed: "images/tree-1")
+        let t1 = SKSpriteNode(imageNamed: "tree-1")
         t1.position = CGPoint(x: -60, y: 128)
         t1.zPosition = 4
         
-        let t2 = SKSpriteNode(imageNamed: "images/tree-2")
+        let t2 = SKSpriteNode(imageNamed: "tree-2")
         t2.position = CGPoint(x: 84, y: -200)
         t2.zPosition = 6
         
-        let t3 = SKSpriteNode(imageNamed: "images/tree-0")
+        let t3 = SKSpriteNode(imageNamed: "tree-0")
         t3.position = CGPoint(x: 200, y: 20)
         t3.zPosition = 5
         
@@ -156,23 +156,23 @@ public class Scene1: PreScene {
     func setupHouses() -> SKNode {
         let houses = SKNode()
         
-        let h0 = SKSpriteNode(imageNamed: "images/house-0")
+        let h0 = SKSpriteNode(imageNamed: "house-0")
         h0.position = CGPoint(x: -660, y: 100)
         h0.zPosition = 10
         
-        let h1 = SKSpriteNode(imageNamed: "images/house-1")
+        let h1 = SKSpriteNode(imageNamed: "house-1")
         h1.position = CGPoint(x: 0, y: 300)
         h1.zPosition = 10
         
-        let h2 = SKSpriteNode(imageNamed: "images/house-2")
+        let h2 = SKSpriteNode(imageNamed: "house-2")
         h2.position = CGPoint(x: 550, y: 75)
         h2.zPosition = 10
         
-        let h3 = SKSpriteNode(imageNamed: "images/house-3")
+        let h3 = SKSpriteNode(imageNamed: "house-3")
         h3.position = CGPoint(x: 225, y: -300)
         h3.zPosition = 10
         
-        let h4 = SKSpriteNode(imageNamed: "images/house-3")
+        let h4 = SKSpriteNode(imageNamed: "house-3")
         h4.position = CGPoint(x: -540, y: -220)
         h4.zPosition = 10
         
@@ -189,10 +189,10 @@ public class Scene1: PreScene {
     }
     
     func moveIndian(indian: String, positions: [CGPoint], duration: TimeInterval) -> SKAction {
-        let frontTexture = SKTexture(imageNamed: "images/indian-\(indian)")
+        let frontTexture = SKTexture(imageNamed: "indian-\(indian)")
         let setFront = SKAction.setTexture(frontTexture, resize: true)
         
-        let backTexture = SKTexture(imageNamed: "images/indian-\(indian)-b")
+        let backTexture = SKTexture(imageNamed: "indian-\(indian)-b")
         let setBack = SKAction.setTexture(backTexture, resize: true)
         
         let moveForward = SKAction.move(to: positions[1], duration: duration)
@@ -204,17 +204,17 @@ public class Scene1: PreScene {
     func setupIndians() -> SKNode {
         let indians = SKNode()
         
-        let i0 = SKSpriteNode(imageNamed: "images/indian-0")
+        let i0 = SKSpriteNode(imageNamed: "indian-0")
         let i0_positions = [CGPoint(x: -400, y: 60),  CGPoint(x: -160, y: -60)]
         i0.position = i0_positions[0]
         i0.zPosition = 11
         
-        let i1 = SKSpriteNode(imageNamed: "images/indian-1")
+        let i1 = SKSpriteNode(imageNamed: "indian-1")
         let i1_positions = [CGPoint(x: 10, y: 250), CGPoint(x: 300, y: 120)]
         i1.position = i1_positions[0]
         i1.zPosition = 12
         
-        let i2 = SKSpriteNode(imageNamed: "images/indian-2")
+        let i2 = SKSpriteNode(imageNamed: "indian-2")
         let i2_positions = [CGPoint(x: 50, y: 25), CGPoint(x: 500, y: 25)]
         i2.position = i2_positions[0]
         i2.zPosition = 13

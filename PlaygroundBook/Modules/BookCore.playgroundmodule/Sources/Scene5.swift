@@ -182,7 +182,7 @@ public class Scene5: PreScene {
     func setupInfoBox() -> SKNode {
         let node = SKNode()
 
-        let balloon = SKSpriteNode(imageNamed: "images/b-4")
+        let balloon = SKSpriteNode(imageNamed: "b-4")
         balloon.zPosition = UI_ZPOSITION + 3
         balloon.setScale(0.5)
 
@@ -201,21 +201,21 @@ public class Scene5: PreScene {
     func setupEarthBackground(crackWaitTime: TimeInterval) -> SKNode {
         let node = SKNode()
         
-        let earth = SKSpriteNode(imageNamed: "images/earth-river")
+        let earth = SKSpriteNode(imageNamed: "earth-river")
         earth.zPosition = 4
         
-        let crack = SKSpriteNode(imageNamed: "images/crack-4")
+        let crack = SKSpriteNode(imageNamed: "crack-4")
         crack.alpha = 0
         crack.zPosition = 5
         crack.position = CGPoint(x: earth.size.width / 2 - crack.size.width / 2, y: 0)
         
         var animationCrackList = [SKTexture]()
         
-        animationCrackList.append(SKTexture(imageNamed: "images/crack-0"))
-        animationCrackList.append(SKTexture(imageNamed: "images/crack-1"))
-        animationCrackList.append(SKTexture(imageNamed: "images/crack-2"))
-        animationCrackList.append(SKTexture(imageNamed: "images/crack-3"))
-        animationCrackList.append(SKTexture(imageNamed: "images/crack-4"))
+        animationCrackList.append(SKTexture(imageNamed: "crack-0"))
+        animationCrackList.append(SKTexture(imageNamed: "crack-1"))
+        animationCrackList.append(SKTexture(imageNamed: "crack-2"))
+        animationCrackList.append(SKTexture(imageNamed: "crack-3"))
+        animationCrackList.append(SKTexture(imageNamed: "crack-4"))
         
         let animateCrack = SKAction.animate(with: animationCrackList, timePerFrame: 0.3, resize: true, restore: true)
         

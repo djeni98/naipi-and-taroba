@@ -111,7 +111,7 @@ public class Scene6: PreScene {
     func setupInfoBox() -> SKNode {
         let node = SKNode()
 
-        let balloon = SKSpriteNode(imageNamed: "images/b-5")
+        let balloon = SKSpriteNode(imageNamed: "b-5")
         balloon.zPosition = UI_ZPOSITION + 3
         balloon.setScale(0.5)
 
@@ -131,7 +131,7 @@ public class Scene6: PreScene {
     func setupRock() -> SKNode {
         let node = SKNode()
         
-        let rock = SKSpriteNode(imageNamed: "images/rock")
+        let rock = SKSpriteNode(imageNamed: "rock")
         rock.zPosition = CHARACTER_ZPOSITION
         
         node.addChild(rock)
@@ -143,13 +143,13 @@ public class Scene6: PreScene {
     func setupEarthAndPalm() -> SKNode {
         let node = SKNode()
         
-        let earth = SKSpriteNode(imageNamed: "images/earth-1-rescale")
+        let earth = SKSpriteNode(imageNamed: "earth-1-rescale")
         earth.yScale = earth.yScale * -1
         earth.position = CGPoint(x: -200, y: -400)
         earth.zRotation = toRadians(-7)
         earth.zPosition = CHARACTER_ZPOSITION + 1
         
-        let palm = SKSpriteNode(imageNamed: "images/palm")
+        let palm = SKSpriteNode(imageNamed: "palm")
         palm.zPosition = CHARACTER_ZPOSITION + 2
         palm.position = CGPoint(x: 100, y: 500)
         
