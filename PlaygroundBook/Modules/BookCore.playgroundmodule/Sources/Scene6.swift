@@ -95,7 +95,7 @@ public class Scene6: PreScene {
 
         take6.addChild(infoBox)
 
-        let handButton = setupHandButton(infoNode: infoBox)
+        let handButton = setupHandButton(infoNode: infoBox, setupNextPage: false)
         handButton.position = CGPoint(x: self.size.width * 0.5, y: 200)
 
         take6.run(.sequence([
@@ -116,11 +116,11 @@ public class Scene6: PreScene {
         balloon.setScale(0.5)
 
         let infoText = setupParagraph(
-            text: "This legend has other versions,\n but the essence\n is Naipi and Tarobá running away\n and Mboi creating the Falls.",
+            text: "This legend has other versions,\n but the essence\n is Naipi and Tarobá running away\n and Mboi creating the Falls,\n like I told you here.",
             font: self.infoFont, fontSize: 30
         )
         infoText.zPosition = UI_ZPOSITION + 4
-        infoText.position = CGPoint(x: 0, y: -20)
+        infoText.position = CGPoint(x: 0, y: -25)
 
         node.addChild(infoText)
         node.addChild(balloon)

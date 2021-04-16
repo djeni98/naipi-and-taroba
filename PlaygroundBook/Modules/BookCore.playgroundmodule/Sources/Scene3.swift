@@ -103,10 +103,12 @@ public class Scene3: PreScene {
         balloon.setScale(0.5)
 
         let infoText = setupParagraph(
-            text: "The Kaingangs use body paint\n only in rituals.",
+            text: "Even though some indigenous\n use body painting all the time,\n Kaingangs use it only in funeral rituals.",
+            // text: "The Kaingangs use body painting\n only in rituals.",
             font: self.infoFont, fontSize: 30
         )
         infoText.zPosition = UI_ZPOSITION + 4
+        infoText.position = CGPoint(x: 0, y: -15)
 
         node.addChild(infoText)
         node.addChild(balloon)

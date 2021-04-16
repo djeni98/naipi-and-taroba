@@ -26,7 +26,7 @@ public class Scene2: PreScene {
     func setupTake2() {
         let text = setupText(
             texts: [
-                ("One year, they had to dedicate the young woman Naipi to Mboi,", 1),
+                ("One year, they had to offer the young woman Naipi to Mboi,", 1),
                 ("a serpent god who lived in the river.", 4)
             ]
         )
@@ -108,7 +108,7 @@ public class Scene2: PreScene {
 //        balloon.xScale = -1 * balloon.xScale
 
         let infoText = setupParagraph(
-            text: "Mboi was the god of the waters\n and he protected the Iguazu river.",
+            text: "Mboi was the waters' god\n and he protected the Iguazu river.",
             font: self.infoFont, fontSize: 30
         )
         infoText.zPosition = UI_ZPOSITION + 4

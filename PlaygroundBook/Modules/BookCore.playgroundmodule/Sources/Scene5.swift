@@ -187,7 +187,7 @@ public class Scene5: PreScene {
         balloon.setScale(0.5)
 
         let infoText = setupParagraph(
-            text: "The Iguazu Falls are located\n between Argentina and Brazil.",
+            text: "The Iguazu Falls are\n between Argentina and Brazil borders.",
             font: self.infoFont, fontSize: 30
         )
         infoText.zPosition = UI_ZPOSITION + 4

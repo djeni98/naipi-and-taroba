@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		447A265B2600305100C533BC /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 447A265A2600305100C533BC /* GameScene.sks */; };
 		447A2678260036B500C533BC /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 447A2677260036B500C533BC /* GameScene.swift */; };
 		5E086DCA2051DDAE004D8D25 /* LiveView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5E086DCC2051DDAE004D8D25 /* LiveView.storyboard */; };
 		5E086DD32051E3A3004D8D25 /* Manifest.plist in Copy Book Contents */ = {isa = PBXBuildFile; fileRef = 5E086DCF2051DF0F004D8D25 /* Manifest.plist */; };
@@ -24,6 +23,7 @@
 		5EF2F97C2054B6E400191409 /* ManifestPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5EF2F97E2054B6E400191409 /* ManifestPlist.strings */; };
 		5EF2F9AE2054BBF300191409 /* LiveViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EF2F9AD2054BBF300191409 /* LiveViewController.swift */; };
 		5EF2F9B72054E6FB00191409 /* Chapters in Copy Book Contents */ = {isa = PBXBuildFile; fileRef = 5EF2F9B62054E6F900191409 /* Chapters */; };
+		B70A355826290A50006BDC02 /* Introduction.swift in Sources */ = {isa = PBXBuildFile; fileRef = B70A355726290A50006BDC02 /* Introduction.swift */; };
 		B78D7F8F262365A5008CB9C5 /* Scene2.swift in Sources */ = {isa = PBXBuildFile; fileRef = B78D7F8E262365A5008CB9C5 /* Scene2.swift */; };
 		B78D7F9926239650008CB9C5 /* Scene3.swift in Sources */ = {isa = PBXBuildFile; fileRef = B78D7F9826239650008CB9C5 /* Scene3.swift */; };
 		B78D7F9E262398E6008CB9C5 /* helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = B78D7F9D262398E6008CB9C5 /* helpers.swift */; };
@@ -125,7 +125,6 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		447A265A2600305100C533BC /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
 		447A2677260036B500C533BC /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
 		5E086DC02051C5A7004D8D25 /* NaipiAndTaroba.playgroundbook */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NaipiAndTaroba.playgroundbook; sourceTree = BUILT_PRODUCTS_DIR; };
 		5E086DC72051DD03004D8D25 /* BookOverridingBuildSettings.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = BookOverridingBuildSettings.xcconfig; sourceTree = "<group>"; };
@@ -154,6 +153,7 @@
 		5EF2F9AD2054BBF300191409 /* LiveViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveViewController.swift; sourceTree = "<group>"; };
 		5EF2F9B62054E6F900191409 /* Chapters */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Chapters; sourceTree = "<group>"; };
 		B707A4FB26225582008E17EA /* Scenes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Scenes.swift; sourceTree = "<group>"; };
+		B70A355726290A50006BDC02 /* Introduction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Introduction.swift; sourceTree = "<group>"; };
 		B78D7F8E262365A5008CB9C5 /* Scene2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Scene2.swift; sourceTree = "<group>"; };
 		B78D7F9826239650008CB9C5 /* Scene3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Scene3.swift; sourceTree = "<group>"; };
 		B78D7F9D262398E6008CB9C5 /* helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = helpers.swift; sourceTree = "<group>"; };
@@ -302,6 +302,7 @@
 				5EF2F9AD2054BBF300191409 /* LiveViewController.swift */,
 				5E3196F22061DEA40077BBD7 /* LiveViewSupport.swift */,
 				447A2677260036B500C533BC /* GameScene.swift */,
+				B70A355726290A50006BDC02 /* Introduction.swift */,
 				B7B3D09426226776002EE21B /* Scene1.swift */,
 				B78D7F8E262365A5008CB9C5 /* Scene2.swift */,
 				B78D7F9826239650008CB9C5 /* Scene3.swift */,
@@ -355,7 +356,6 @@
 			children = (
 				B7A22E3F2626781E009D9B21 /* images */,
 				5EF2F97E2054B6E400191409 /* ManifestPlist.strings */,
-				447A265A2600305100C533BC /* GameScene.sks */,
 				5E086DCC2051DDAE004D8D25 /* LiveView.storyboard */,
 				5E551EC42371FC3F00784365 /* Assets.xcassets */,
 			);
@@ -501,7 +501,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				B7A22E402626781E009D9B21 /* images in Resources */,
-				447A265B2600305100C533BC /* GameScene.sks in Resources */,
 				5EF2F97C2054B6E400191409 /* ManifestPlist.strings in Resources */,
 				5E551EC52371FC3F00784365 /* Assets.xcassets in Resources */,
 				5E086DCA2051DDAE004D8D25 /* LiveView.storyboard in Resources */,
@@ -584,6 +583,7 @@
 				B7B3D09526226776002EE21B /* Scene1.swift in Sources */,
 				B7CD46C92625235600351DC3 /* Scene6.swift in Sources */,
 				5EF2F9AE2054BBF300191409 /* LiveViewController.swift in Sources */,
+				B70A355826290A50006BDC02 /* Introduction.swift in Sources */,
 				B78D7F8F262365A5008CB9C5 /* Scene2.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

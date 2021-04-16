@@ -25,7 +25,8 @@ public class PreScene: SKScene {
     let UI_ZPOSITION: CGFloat = 30
     
     let storyFont = "Herculanum"
-    let infoFont = "Klee" // "Papyrus"
+    let infoFont = "Skia"
+    // let infoFont = "Monaco" // "Klee" // "Papyrus"
     
     var infoTextNode: SKNode!
     
@@ -317,7 +318,7 @@ public class PreScene: SKScene {
         return lines
     }
     
-    func setupHandButton(infoNode: SKNode) -> SKNode {
+    func setupHandButton(infoNode: SKNode, setupNextPage: Bool = true) -> SKNode {
         let node = SKNode()
         
         let hand = SKSpriteNode(imageNamed: "images/click-hand")
@@ -332,8 +333,8 @@ public class PreScene: SKScene {
         let circle = SKShapeNode(circleOfRadius: 400)
         circle.position = CGPoint(x: -50, y: 200)
         circle.zPosition = UI_ZPOSITION
-        circle.strokeColor = .blue
-        circle.lineWidth = 4
+        circle.fillColor = UIColor(red: 1, green: 1, blue: 1, alpha: 0.3)
+        circle.lineWidth = 2
         circle.alpha = 1
 
         node.addChild(circle)
@@ -345,20 +346,19 @@ public class PreScene: SKScene {
         
         self.handButton = node
         self.infoTextNode = infoNode
-        
-//        let nextButton = SKShapeNode(circleOfRadius: 200)
-//        nextButton.fillColor = .blue
 
-        let nextButton = SKSpriteNode(imageNamed: "images/next-page-2")
-        nextButton.zPosition = UI_ZPOSITION + 7
-        nextButton.anchorPoint = CGPoint(x: 1, y: 0)
-        nextButton.position = CGPoint(x: self.size.width + 25, y: -25)
-        nextButton.alpha = 0
-        nextButton.setScale(0.1)
+        if setupNextPage {
+            let nextButton = SKSpriteNode(imageNamed: "images/next-page-2")
+            nextButton.zPosition = UI_ZPOSITION + 7
+            nextButton.anchorPoint = CGPoint(x: 1, y: 0)
+            nextButton.position = CGPoint(x: self.size.width + 25, y: -25)
+            nextButton.alpha = 0
+            nextButton.setScale(0.1)
 
-        self.addChild(nextButton)
+            self.addChild(nextButton)
 
-        nextPageButton = nextButton
+            nextPageButton = nextButton
+        }
         
         return node
     }
@@ -371,8 +371,7 @@ public class PreScene: SKScene {
 
     func touchUp(atPoint pos : CGPoint) {
         if handButton == nil { return }
-        
-        // clique na mao
+
         if handButton.contains(pos) && pageStatus == .animation {
             pageStatus = .information
             
@@ -382,14 +381,21 @@ public class PreScene: SKScene {
             
             handButton.alpha = 0
 
-            let scale = SKAction.sequence([
-                .scale(to: 0.35, duration: 1.5),
-                .scale(to: 0.1, duration: 1.5)
-            ])
-            
-            nextPageButton.run(.sequence([.wait(forDuration: nextButtonWaitTime), .fadeIn(withDuration: 0), .repeatForever(scale)]))
+            let scaleUp = SKAction.scale(to: 0.35, duration: 1)
+            scaleUp.timingMode = .easeOut
+            let scaleDown = SKAction.scale(to: 0.1, duration: 1)
+            scaleDown.timingMode = .easeIn
 
-        } else if nextPageButton.contains(pos) && pageStatus == .information {
+            let scale = SKAction.sequence([scaleUp, scaleDown])
+
+            if nextPageButton != nil {
+                nextPageButton.run(.sequence([
+                    .wait(forDuration: nextButtonWaitTime),
+                    .fadeIn(withDuration: 0),
+                    .repeatForever(scale)
+                ]))
+            }
+        } else if nextPageButton != nil && nextPageButton.contains(pos) && pageStatus == .information {
             PlaygroundPage.current.navigateTo(page: .next)
         }
     }
