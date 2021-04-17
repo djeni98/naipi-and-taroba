@@ -105,6 +105,15 @@ public class Scene6: PreScene {
             }
         ]))
 
+        if let waterfallSound = self.setupMusic(resource: "scene-6", withExtension: "mp3") {
+            waterfallSound.run(.sequence([
+                .changeVolume(to: 0, duration: 0),
+                .changeVolume(to: 0.04, duration: 1.5)
+            ]))
+            self.sounds.append(waterfallSound)
+            self.addChild(waterfallSound)
+        }
+
         return take6
     }
 

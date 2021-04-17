@@ -94,6 +94,25 @@ public class Scene2: PreScene {
                 take2.addChild(handButton)
             }
         ]))
+
+        if let animationSound = self.setupMusic(resource: "scene-2", withExtension: "mp3") {
+            animationSound.run(.sequence([
+                .changeVolume(to: 0, duration: 0),
+                .changeVolume(to: 0.04, duration: 2),
+            ]))
+            self.sounds.append(animationSound)
+            self.addChild(animationSound)
+        }
+
+        if let mboiSound = self.setupMusic(resource: "mboi-river-0", withExtension: "mp3") {
+            mboiSound.run(.sequence([
+                .changeVolume(to: 0, duration: 0),
+                .wait(forDuration: 2),
+                .changeVolume(to: 0.08, duration: 2),
+            ]))
+            self.sounds.append(mboiSound)
+            self.addChild(mboiSound)
+        }
         
         return take2
     }

@@ -176,6 +176,53 @@ public class Scene5: PreScene {
             }
         ]))
 
+        if let riverSound = self.setupMusic(resource: "scene-4", withExtension: "mp3") {
+            riverSound.run(.sequence([
+                .changeVolume(to: 0, duration: 0),
+                .changeVolume(to: 0.04, duration: 2),
+                .wait(forDuration: 3),
+                .changeVolume(to: 0, duration: 1.5)
+            ]))
+            self.sounds.append(riverSound)
+            self.addChild(riverSound)
+        }
+
+
+        if let mboiSound = self.setupMusic(resource: "mboi-river-1", withExtension: "mp3") {
+            mboiSound.run(.sequence([
+                .changeVolume(to: 0, duration: 0),
+                .changeVolume(to: 0.08, duration: 1),
+                .wait(forDuration: 1.5),
+                .changeVolume(to: 0, duration: 1),
+            ]))
+            self.sounds.append(mboiSound)
+            self.addChild(mboiSound)
+        }
+
+        if let crackingSound = self.setupMusic(resource: "cracking", withExtension: "mp3") {
+            crackingSound.run(.sequence([
+                .changeVolume(to: 0, duration: 0),
+                .play(),
+                .wait(forDuration: 2.5),
+                .changeVolume(to: 0.08, duration: 1),
+                .wait(forDuration: 2),
+                .changeVolume(to: 0, duration: 1),
+            ]))
+            crackingSound.autoplayLooped = false
+            self.sounds.append(crackingSound)
+            self.addChild(crackingSound)
+        }
+
+        if let waterfallSound = self.setupMusic(resource: "waterfall", withExtension: "mp3") {
+            waterfallSound.run(.sequence([
+                .changeVolume(to: 0, duration: 0),
+                .wait(forDuration: 6.5),
+                .changeVolume(to: 0.04, duration: 1.5)
+            ]))
+            self.sounds.append(waterfallSound)
+            self.addChild(waterfallSound)
+        }
+
         return take4
     }
 

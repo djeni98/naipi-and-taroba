@@ -128,6 +128,40 @@ public class Scene4: PreScene {
             }
         ]))
 
+        if let animationSound = self.setupMusic(resource: "scene-4", withExtension: "mp3") {
+            animationSound.run(.sequence([
+                .changeVolume(to: 0, duration: 0),
+                .changeVolume(to: 0.04, duration: 2),
+            ]))
+            self.sounds.append(animationSound)
+            self.addChild(animationSound)
+        }
+
+
+        if let charactersSound = self.setupMusic(resource: "characters-paddling", withExtension: "mp3") {
+            charactersSound.run(.sequence([
+                .changeVolume(to: 0, duration: 0),
+                .changeVolume(to: 0.025, duration: 1),
+                .wait(forDuration: 4.5),
+                .changeVolume(to: 0, duration: 3.1),
+            ]))
+            self.sounds.append(charactersSound)
+            self.addChild(charactersSound)
+        }
+
+
+        if let mboiSound = self.setupMusic(resource: "mboi-river-1", withExtension: "mp3") {
+            mboiSound.run(.sequence([
+                .changeVolume(to: 0, duration: 0),
+                .wait(forDuration: 4),
+                .changeVolume(to: 0.08, duration: 1),
+                .wait(forDuration: 5.5),
+                .changeVolume(to: 0, duration: 1.5),
+            ]))
+            self.sounds.append(mboiSound)
+            self.addChild(mboiSound)
+        }
+
         return take4
     }
 

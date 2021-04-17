@@ -35,6 +35,8 @@ public class PreScene: SKScene {
     var nextPageButton: SKNode!
     var nextButtonWaitTime: TimeInterval = 3
 
+    var sounds: [SKAudioNode] = []
+
 //    func setupScene(texts: [(String, TimeInterval)], waitDuration: TimeInterval, fadeOutDuration: TimeInterval) {
 //        let text = setupText(texts: texts)
 //        text.position = CGPoint(x: self.size.width / 2, y: self.size.height - 200)
@@ -369,6 +371,15 @@ public class PreScene: SKScene {
     func touchMoved(toPoint pos : CGPoint) {
     }
 
+    func setupMusic(resource: String, withExtension: String) -> SKAudioNode? {
+        if let musicURL = Bundle.main.url(forResource: resource, withExtension: withExtension) {
+            let node = SKAudioNode(url: musicURL)
+            node.autoplayLooped = true
+            return node
+        }
+        return nil
+    }
+
     func touchUp(atPoint pos : CGPoint) {
         if handButton == nil { return }
 
@@ -396,7 +407,16 @@ public class PreScene: SKScene {
                 ]))
             }
         } else if nextPageButton != nil && nextPageButton.contains(pos) && pageStatus == .information {
-            PlaygroundPage.current.navigateTo(page: .next)
+            for s in self.sounds {
+                s.run(.changeVolume(to: 0, duration: 0.25))
+            }
+            self.run(.sequence([
+                .wait(forDuration: 0.25),
+                .run {
+                    PlaygroundPage.current.navigateTo(page: .next)
+                }
+            ]))
+
         }
     }
 

@@ -91,6 +91,15 @@ public class Scene3: PreScene {
                 take3.addChild(handButton)
             }
         ]))
+
+        if let animationSound = self.setupMusic(resource: "scene-3", withExtension: "mp3") {
+            animationSound.run(.sequence([
+                .changeVolume(to: 0, duration: 0),
+                .changeVolume(to: 0.03, duration: 2),
+            ]))
+            self.sounds.append(animationSound)
+            self.addChild(animationSound)
+        }
         
         return take3
     }
