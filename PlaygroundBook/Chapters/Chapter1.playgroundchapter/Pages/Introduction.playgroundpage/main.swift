@@ -3,13 +3,13 @@
  # Naipi and Tarobá
  **Legend of Iguazu Falls**
 
- This is a brazilian indiginous story, from kaingang tribe.
- It is teached in schools in Paraná, a state of Brazil, but it is not so known even in this region.
+ This is a Brazilian indigenous story, from the Kaingang tribe.
+ It is taught in schools in Paraná, a state of southern Brazil, but it is not well-known even in this region.
 
- > The kaingang tribe is more numerous in the south part of Brazil.
+ > The Kaingang tribe is more numerous in the southern part of Brazil.
 
- For this reason, this playgroundbook brings an interactive
- animation telling about the story to spread brazilian culture.
+ In order to spread Brazilian culture and its folklore,
+ this playground book brings an interactive animation telling this story.
 
  ## How this playground works
  When the hand shows up, click on it to interact.

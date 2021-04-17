@@ -26,9 +26,9 @@ public class Scene6: PreScene {
     func setup() {
         let text = setupText(texts: [
             ("The legend tells that Naipi became a rock in the middle of the Falls", 1),
-            ("and Tarobá became a palm.", 5),
+            ("and Tarobá became a palm tree.", 5),
             ("", 0),
-            ("In this way, they are fated to see each other without being able to be together again.", 7.5)
+            ("In this way, they are doomed to see each other without being able to be together again.", 7.5)
         ])
         text.position = CGPoint(x: self.size.width / 2, y: self.size.height - 200)
 
@@ -125,7 +125,7 @@ public class Scene6: PreScene {
         balloon.setScale(0.5)
 
         let infoText = setupParagraph(
-            text: "This legend has other versions,\n but the essence\n is Naipi and Tarobá running away\n and Mboi creating the Falls,\n like I told you here.",
+            text: "This legend has other versions,\n but the essence\n is Naipi and Tarobá running away\n and Mboi creating the Falls,\n like it was told here.",
             font: self.infoFont, fontSize: 30
         )
         infoText.zPosition = UI_ZPOSITION + 4
