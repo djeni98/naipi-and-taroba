@@ -88,7 +88,7 @@ public class Scene1: PreScene {
         if let animationSound = self.setupMusic(resource: "scene-1", withExtension: "mp3") {
             animationSound.run(.sequence([
                 .changeVolume(to: 0, duration: 0),
-                .changeVolume(to: 0.025, duration: 2),
+                .changeVolume(to: 0.08, duration: 2),
             ]))
             self.sounds.append(animationSound)
             self.addChild(animationSound)

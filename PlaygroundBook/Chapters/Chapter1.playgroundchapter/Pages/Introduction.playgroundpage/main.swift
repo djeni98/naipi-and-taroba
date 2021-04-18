@@ -17,7 +17,8 @@
  When the page starts flipping, click on it to go to the next page.
 
  ## Enjoy the story
- 
+
+ > This playground book has sound effects, so increase your device volume for a better experience.
  */
 
 //#-hidden-code

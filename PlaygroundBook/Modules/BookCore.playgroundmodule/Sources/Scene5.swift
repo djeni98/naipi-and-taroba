@@ -204,7 +204,7 @@ public class Scene5: PreScene {
                 .changeVolume(to: 0, duration: 0),
                 .play(),
                 .wait(forDuration: 2.5),
-                .changeVolume(to: 0.08, duration: 1),
+                .changeVolume(to: 0.15, duration: 1),
                 .wait(forDuration: 2),
                 .changeVolume(to: 0, duration: 1),
             ]))
