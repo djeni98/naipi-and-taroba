@@ -43,6 +43,9 @@
 		B7B3D09A262269D0002EE21B /* Scene4.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7B3D099262269D0002EE21B /* Scene4.swift */; };
 		B7CD46B226248A8C00351DC3 /* Scene5.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7CD46B126248A8C00351DC3 /* Scene5.swift */; };
 		B7CD46C92625235600351DC3 /* Scene6.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7CD46C82625235600351DC3 /* Scene6.swift */; };
+		B7E4716D262B8252008BF33E /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = B7E4716C262B8252008BF33E /* README.md */; };
+		B7E47179262B8871008BF33E /* README.md in Copy Book Contents */ = {isa = PBXBuildFile; fileRef = B7E4716C262B8252008BF33E /* README.md */; };
+		B7E47181262BA572008BF33E /* chocalho.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = B7E47180262BA572008BF33E /* chocalho.mp3 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXBuildRule section */
@@ -113,6 +116,7 @@
 			dstPath = "$(CONTENTS_FOLDER_PATH)";
 			dstSubfolderSpec = 16;
 			files = (
+				B7E47179262B8871008BF33E /* README.md in Copy Book Contents */,
 				5E086DD32051E3A3004D8D25 /* Manifest.plist in Copy Book Contents */,
 				5EF2F9B72054E6FB00191409 /* Chapters in Copy Book Contents */,
 				5E70679F23678DC30094BDEF /* Modules in Copy Book Contents */,
@@ -184,6 +188,8 @@
 		B7B3D099262269D0002EE21B /* Scene4.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Scene4.swift; sourceTree = "<group>"; };
 		B7CD46B126248A8C00351DC3 /* Scene5.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Scene5.swift; sourceTree = "<group>"; };
 		B7CD46C82625235600351DC3 /* Scene6.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Scene6.swift; sourceTree = "<group>"; };
+		B7E4716C262B8252008BF33E /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		B7E47180262BA572008BF33E /* chocalho.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = chocalho.mp3; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -226,6 +232,7 @@
 		5E086DC12051C5A7004D8D25 /* PlaygroundBook */ = {
 			isa = PBXGroup;
 			children = (
+				B7E4716C262B8252008BF33E /* README.md */,
 				5E086DCF2051DF0F004D8D25 /* Manifest.plist */,
 				5E70679B23678D810094BDEF /* Modules */,
 				5EF2F9792054B64800191409 /* PrivateResources */,
@@ -397,6 +404,7 @@
 		B7848E31262A318E00B13FC8 /* audio */ = {
 			isa = PBXGroup;
 			children = (
+				B7E47180262BA572008BF33E /* chocalho.mp3 */,
 				B7848E76262A6C1500B13FC8 /* cracking.mp3 */,
 				B7848E71262A694500B13FC8 /* scene-6.mp3 */,
 				B7848E68262A62C000B13FC8 /* mboi-river-1.mp3 */,
@@ -547,6 +555,7 @@
 				B7848E72262A694500B13FC8 /* scene-6.mp3 in Resources */,
 				5EF2F97C2054B6E400191409 /* ManifestPlist.strings in Resources */,
 				B7848E5A262A51DB00B13FC8 /* scene-2.mp3 in Resources */,
+				B7E4716D262B8252008BF33E /* README.md in Resources */,
 				B7848E77262A6C1500B13FC8 /* cracking.mp3 in Resources */,
 				B7848E63262A5B4000B13FC8 /* characters-paddling.mp3 in Resources */,
 				B7848E5C262A51DB00B13FC8 /* scene-3.mp3 in Resources */,
@@ -556,6 +565,7 @@
 				5E551EC52371FC3F00784365 /* Assets.xcassets in Resources */,
 				B7848E5B262A51DB00B13FC8 /* mboi-river-0.mp3 in Resources */,
 				5E086DCA2051DDAE004D8D25 /* LiveView.storyboard in Resources */,
+				B7E47181262BA572008BF33E /* chocalho.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
