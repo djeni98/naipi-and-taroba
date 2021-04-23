@@ -24,6 +24,7 @@
 		5EF2F9AE2054BBF300191409 /* LiveViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EF2F9AD2054BBF300191409 /* LiveViewController.swift */; };
 		5EF2F9B72054E6FB00191409 /* Chapters in Copy Book Contents */ = {isa = PBXBuildFile; fileRef = 5EF2F9B62054E6F900191409 /* Chapters */; };
 		B70A355826290A50006BDC02 /* Introduction.swift in Sources */ = {isa = PBXBuildFile; fileRef = B70A355726290A50006BDC02 /* Introduction.swift */; };
+		B7320192263317D800471ACB /* poster1.png in Resources */ = {isa = PBXBuildFile; fileRef = B7320191263317D800471ACB /* poster1.png */; };
 		B7848E3F262A37F100B13FC8 /* scene-1.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = B7848E3E262A37F100B13FC8 /* scene-1.mp3 */; };
 		B7848E5A262A51DB00B13FC8 /* scene-2.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = B7848E57262A51DB00B13FC8 /* scene-2.mp3 */; };
 		B7848E5B262A51DB00B13FC8 /* mboi-river-0.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = B7848E58262A51DB00B13FC8 /* mboi-river-0.mp3 */; };
@@ -169,6 +170,7 @@
 		5EF2F9B62054E6F900191409 /* Chapters */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Chapters; sourceTree = "<group>"; };
 		B707A4FB26225582008E17EA /* Scenes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Scenes.swift; sourceTree = "<group>"; };
 		B70A355726290A50006BDC02 /* Introduction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Introduction.swift; sourceTree = "<group>"; };
+		B7320191263317D800471ACB /* poster1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = poster1.png; sourceTree = "<group>"; };
 		B7848E3E262A37F100B13FC8 /* scene-1.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "scene-1.mp3"; sourceTree = "<group>"; };
 		B7848E57262A51DB00B13FC8 /* scene-2.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "scene-2.mp3"; sourceTree = "<group>"; };
 		B7848E58262A51DB00B13FC8 /* mboi-river-0.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "mboi-river-0.mp3"; sourceTree = "<group>"; };
@@ -383,6 +385,7 @@
 		5EF2F9792054B64800191409 /* PrivateResources */ = {
 			isa = PBXGroup;
 			children = (
+				B7320191263317D800471ACB /* poster1.png */,
 				B7848E80262A73B900B13FC8 /* poster0.png */,
 				B7848E7B262A727A00B13FC8 /* poster.png */,
 				B7848E31262A318E00B13FC8 /* audio */,
@@ -551,6 +554,7 @@
 			files = (
 				B7848E62262A5B4000B13FC8 /* scene-4.mp3 in Resources */,
 				B7848E6A262A62C000B13FC8 /* mboi-river-1.mp3 in Resources */,
+				B7320192263317D800471ACB /* poster1.png in Resources */,
 				B7848E81262A73B900B13FC8 /* poster0.png in Resources */,
 				B7848E72262A694500B13FC8 /* scene-6.mp3 in Resources */,
 				5EF2F97C2054B6E400191409 /* ManifestPlist.strings in Resources */,

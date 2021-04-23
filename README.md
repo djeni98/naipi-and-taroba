@@ -1,7 +1,11 @@
  # Naipi e Tarobá
  **Lenda das Cataratas do Iguaçu**
 
-Este é um playground book em swift feito por Djenifer Renata Pereira e submetido ao WWDC21 Swift Challenge.
+![Naipi e Tarobá](poster.png)
+
+Este é um playground book em swift feito por Djenifer Renata Pereira e submetido ao WWDC21 Swift Challenge. Você pode ver o vídeo sobre o playgrounds no [youtube](https://youtu.be/NP4XIpNLOc4).
+
+Se quiser, você pode mudar para a versão em inglês trocando a branch do repositório para **master**.
 
 ## Sobre a lenda
 
