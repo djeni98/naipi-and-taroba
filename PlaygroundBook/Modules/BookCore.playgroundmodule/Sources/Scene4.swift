@@ -26,9 +26,9 @@ public class Scene4: PreScene {
     
     func setupTake4() {
         let text = setupText(texts: [
-            ("They decided to run away from Mboi through the river.", 1),
+            ("Eles decidiram fugir de Mboi pelo rio.", 1),
             ("", 0),
-            ("However, Mboi realized it and started chasing them.", 5)
+            ("No entanto, Mboi percebeu e começou a perseguir eles.", 5)
         ])
         text.position = CGPoint(x: self.size.width / 2, y: self.size.height - 200)
 
@@ -173,7 +173,7 @@ public class Scene4: PreScene {
         balloon.setScale(0.5)
 
         let infoText = setupParagraph(
-            text: "The Iguazu name means 'big river':\n 'y' (water, river) and 'guasu' (big)",
+            text: "O nome Iguaçu significa 'grande rio':\n 'y' (água, rio) e 'guasu' (grande)",
             font: self.infoFont, fontSize: 30
         )
         infoText.zPosition = UI_ZPOSITION + 4

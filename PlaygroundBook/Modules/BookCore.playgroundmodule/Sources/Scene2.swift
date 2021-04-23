@@ -26,8 +26,8 @@ public class Scene2: PreScene {
     func setupTake2() {
         let text = setupText(
             texts: [
-                ("It was time for the tribe to offer Naipi, a young woman,", 1),
-                ("to the serpent god Mboi.", 4)
+                ("Era hora da tribo oferecer Naipi, uma jovem mulher,", 1),
+                ("ao deus serpente Mboi.", 4)
             ]
         )
         text.position = CGPoint(x: self.size.width / 2, y: self.size.height - 200)
@@ -127,7 +127,7 @@ public class Scene2: PreScene {
 //        balloon.xScale = -1 * balloon.xScale
 
         let infoText = setupParagraph(
-            text: "Mboi was the God of Waters\n and he protected the Iguazu river.",
+            text: "Mboi era o Deus das Águas\n e ele protegia o rio Iguaçu.",
             font: self.infoFont, fontSize: 30
         )
         infoText.zPosition = UI_ZPOSITION + 4

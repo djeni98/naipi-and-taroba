@@ -1,24 +1,25 @@
 /*: Introduction
  
- # Naipi and Tarobá
- **Legend of Iguazu Falls**
+ # Naipi e Tarobá
+ **Lenda das Cataratas do Iguaçu**
 
- This is a Brazilian indigenous story, from the Kaingang tribe.
- It is taught in schools in Paraná, a state of southern Brazil, but it is not well-known even in this region.
+ Essa é uma história indígena brasileira, da tribo Kaingang.
+ Ela é ensinada nas escolas do Paraná, um estado do sul do Brasil, mas não é bem conhecida mesma nessa região.
 
- > The Kaingang tribe is more numerous in the southern part of Brazil.
+ > A tribo Kaingang é mais numerosa na parte sul do Brasil.
 
- In order to spread Brazilian culture and its folklore,
- this playground book brings an interactive animation telling this story.
+ A fim de espalhar a cultura brasileira e seu folclore,
+ esse livro playground traz uma animação interativa contanto essa história.
 
- ## How this playground works
- When the hand shows up, click on it to interact.
+ ## Como este playground funciona
 
- When the page starts flipping, click on it to go to the next page.
+ Quando a mão aparecer, clique nela para interagir.
 
- ## Enjoy the story
+ Quando a página começar a virar, clique nela para ir para a próxima página.
 
- > This playground book has sound effects, so increase your device volume for a better experience.
+ ## Aproveite a história
+
+ > Este playground tem efeitos sonoros, então aumente o som do seu dispositiov para uma melhor experiência.
  */
 
 //#-hidden-code

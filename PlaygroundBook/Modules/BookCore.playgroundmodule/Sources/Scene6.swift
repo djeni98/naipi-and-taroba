@@ -25,10 +25,10 @@ public class Scene6: PreScene {
 
     func setup() {
         let text = setupText(texts: [
-            ("The legend tells that Naipi became a rock in the middle of the Falls", 1),
-            ("and Tarobá became a palm tree.", 5),
+            ("A lenda conta que Naipi se tornou uma rocha no meio das Cataratas", 1),
+            ("e Tarobá se tornou uma palmeira.", 5),
             ("", 0),
-            ("In this way, they are doomed to see each other without being able to be together again.", 7.5)
+            ("Dessa maneira, eles estão condenados a se ver sem poder estarem juntos de novo.", 7.5)
         ])
         text.position = CGPoint(x: self.size.width / 2, y: self.size.height - 200)
 
@@ -125,7 +125,7 @@ public class Scene6: PreScene {
         balloon.setScale(0.5)
 
         let infoText = setupParagraph(
-            text: "This legend has other versions,\n but the essence\n is Naipi and Tarobá running away\n and Mboi creating the Falls,\n like it was told here.",
+            text: "Essa lenda tem outras versões,\n mas a essência é\n Naipi e Tarobá fugindo\n e Mboi criando as Cataratas,\n como foi contado aqui.",
             font: self.infoFont, fontSize: 30
         )
         infoText.zPosition = UI_ZPOSITION + 4

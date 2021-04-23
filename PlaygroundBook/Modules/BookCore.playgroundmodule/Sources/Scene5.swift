@@ -27,10 +27,10 @@ public class Scene5: PreScene {
     
     func setupPart1() {
         let text = setupText(texts: [
-            ("Mboi couldn’t reach Naipi and Tarobá,", 1),
-            ("so he cracked the earth to stop them, creating the Falls.", 4),
+            ("Mboi não conseguiu alcançar Naipi e Tarobá,", 1),
+            ("então ele quebrou a terra para pará-los, criando as Cataratas.", 4),
             ("", 0),
-            ("Naipi and Tarobá fell inside of it and were never seen again.", 10)
+            ("Naipi e Tarobá cairam dentro dela e nunca mais foram vistos novamente.", 10)
         ])
         text.position = CGPoint(x: self.size.width / 2, y: self.size.height - 200)
 
@@ -234,7 +234,7 @@ public class Scene5: PreScene {
         balloon.setScale(0.5)
 
         let infoText = setupParagraph(
-            text: "The Iguazu Falls are located at\n the Argentina-Brazil border.",
+            text: "As Cataratas do Iguaçu estão localizadas\n na divisa do Brasil e da Argentina.",
             font: self.infoFont, fontSize: 30
         )
         infoText.zPosition = UI_ZPOSITION + 4

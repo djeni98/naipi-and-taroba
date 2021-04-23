@@ -33,7 +33,7 @@ public class Introduction: SKScene {
         // Text 1
         let howItWorks = SKLabelNode(fontNamed: "herculanum")
         howItWorks.zPosition = 1
-        howItWorks.text = "How this playground works"
+        howItWorks.text = "Como este playground funciona"
         howItWorks.position.y = self.size.height / 2 - 100
         howItWorks.alpha = 0
         howItWorks.run(.sequence([.wait(forDuration: 0.5), .fadeIn(withDuration: 0.5)]))
@@ -43,7 +43,7 @@ public class Introduction: SKScene {
         // Text 2
         let handRule = SKLabelNode(fontNamed: "Skia")
         handRule.zPosition = 2
-        handRule.text = "When the hand shows up, click on it to interact."
+        handRule.text = "Quando a mão aparecer, clique nela para interagir."
         handRule.position.y = self.size.height / 2 - 250
         handRule.alpha = 0
         handRule.fontSize = 25
@@ -98,19 +98,19 @@ public class Introduction: SKScene {
             self.state = .second
 
             let wellDone = SKLabelNode(fontNamed: "herculanum")
-            wellDone.text = "Well done!"
+            wellDone.text = "Muito bem!"
             wellDone.position = CGPoint(x: 225, y: 50)
             wellDone.run(.fadeIn(withDuration: 1))
 
             node.addChild(wellDone)
 
             let pageRule1 = SKLabelNode(fontNamed: "Skia")
-            pageRule1.text = "When the page starts flipping,"
+            pageRule1.text = "Quando a página começar a virar,"
             pageRule1.position.y = 15
             pageRule1.fontSize = 25
 
             let pageRule2 = SKLabelNode(fontNamed: "Skia")
-            pageRule2.text = "click on it to go to the next page."
+            pageRule2.text = "clique nela para ir para a próxima página."
             pageRule2.position.y = -15
             pageRule2.fontSize = 25
 
@@ -143,7 +143,7 @@ public class Introduction: SKScene {
             self.state = .third
 
             let letsGo = SKLabelNode(fontNamed: "herculanum")
-            letsGo.text = "Ok! Let's go to the story"
+            letsGo.text = "Ok! Vamos para a história"
             letsGo.alpha = 0
             letsGo.position = CGPoint(x: self.size.width / 2, y: self.size.height / 2)
             letsGo.run(.sequence([.wait(forDuration: 0.5), .fadeIn(withDuration: 1)]))

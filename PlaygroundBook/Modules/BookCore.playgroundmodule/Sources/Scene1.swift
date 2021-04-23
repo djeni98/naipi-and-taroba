@@ -23,7 +23,7 @@ public class Scene1: PreScene {
     }
     
     func setupTake1() {
-        let text = setupText(texts: [("A long time ago, the Kaingang were living near the Iguazu River.", 1)])
+        let text = setupText(texts: [("Há muito tempo, os Kaingangs viviam perto do rio Iguaçu.", 1)])
         text.position = CGPoint(x: self.size.width / 2, y: self.size.height - 200)
         
         self.addChild(text)
@@ -105,7 +105,7 @@ public class Scene1: PreScene {
         balloon.setScale(0.5)
 
         let infoText = setupParagraph(
-            text: "The Kaingang tribe used\n to live in subterranean houses\n which had a visible triangular roof.",
+            text: "A tribo Kaingang costumava\n viver em casas subterrâneas que\n tinham um teto triangular visível.",
             font: self.infoFont, fontSize: 30
         )
         infoText.zPosition = UI_ZPOSITION + 4

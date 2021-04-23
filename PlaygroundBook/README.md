@@ -1,29 +1,28 @@
-# Naipi and Tarobá
-**Legend of Iguazu Falls**
+ # Naipi e Tarobá
+ **Lenda das Cataratas do Iguaçu**
 
-This is a Brazilian indigenous story, from the Kaingang tribe.
-It is taught in schools in Paraná, a state of southern Brazil, but it is not well-known even in this region.
+ Essa é uma história indígena brasileira, da tribo Kaingang.
+ Ela é ensinada nas escolas do Paraná, um estado do sul do Brasil, mas não é bem conhecida mesma nessa região.
 
-> The Kaingang tribe is more numerous in the southern part of Brazil.
+ > A tribo Kaingang é mais numerosa na parte sul do Brasil.
 
-In order to spread Brazilian culture and its folklore,
-this playground book brings an interactive animation telling this story.
+ A fim de espalhar a cultura brasileira e seu folclore,
+ esse livro playground traz uma animação interativa contanto essa história.
 
-## Credits and Attributions
+## Créditos e Atribuições
 
-Most sounds used in this playground were obtained from Freesound.org and edited as allowed by their license.
+A maioria dos sons usados nesse playground foram obtidos do Freesound.org e editados como permitido por suas licenças.
 
-Sounds under [Creative Commons - CC0 1.0 Universal](http://creativecommons.org/publicdomain/zero/1.0/):
-- ["Sabiá.wav"](https://freesound.org/people/Flavia2020/sounds/533411/) by Flavia2020
-- ["Fish Splashing Pond.wav](https://freesound.org/people/kylecutsfilms/sounds/443380/)" by kylecutsfilms
-- ["Paddles rowing on a calm water stream"](https://freesound.org/people/brunoboselli/sounds/249707/) by brunoboselli
-- ["POOL SWIMMING R-L"](https://freesound.org/people/tbsounddesigns/sounds/530153/) by tbsounddesigns
-- ["Cracking Earthquake (cracking soil, cracking stone)"](https://freesound.org/people/uagadugu/sounds/222521/) by uagadugu
+Sons sob [Creative Commons - CC0 1.0 Universal](http://creativecommons.org/publicdomain/zero/1.0/):
+- ["Sabiá.wav"](https://freesound.org/people/Flavia2020/sounds/533411/) por Flavia2020
+- ["Fish Splashing Pond.wav](https://freesound.org/people/kylecutsfilms/sounds/443380/)" por kylecutsfilms
+- ["Paddles rowing on a calm water stream"](https://freesound.org/people/brunoboselli/sounds/249707/) por brunoboselli
+- ["POOL SWIMMING R-L"](https://freesound.org/people/tbsounddesigns/sounds/530153/) por tbsounddesigns
+- ["Cracking Earthquake (cracking soil, cracking stone)"](https://freesound.org/people/uagadugu/sounds/222521/) por uagadugu
 
-Sounds under [Creative Commons - Attribution 3.0 Unported](http://creativecommons.org/licenses/by/3.0/):
-- ["Waterfall, Small, A.wav"](https://freesound.org/people/InspectorJ/sounds/365915/) by InspectorJ (www.jshaw.co.uk)
-- ["Waterfall, Large, A.wav"](https://freesound.org/people/InspectorJ/sounds/335992/) by InspectorJ (www.jshaw.co.uk)
-- ["Small river.wav"](https://freesound.org/people/miguelpascucci/sounds/350480/) by miguelpascucci
+Sons sob [Creative Commons - Attribution 3.0 Unported](http://creativecommons.org/licenses/by/3.0/):
+- ["Waterfall, Small, A.wav"](https://freesound.org/people/InspectorJ/sounds/365915/) por InspectorJ (www.jshaw.co.uk)
+- ["Waterfall, Large, A.wav"](https://freesound.org/people/InspectorJ/sounds/335992/) por InspectorJ (www.jshaw.co.uk)
+- ["Small river.wav"](https://freesound.org/people/miguelpascucci/sounds/350480/) por miguelpascucci
 
-"chocalho.mp3" created by Guilerme Moreira Ribeiro Barciki, a student from Apple Developer Academy - PUCPR, and requested specifically for this project.
-He gave me permission to create derivative works.
+"chocalho.mp3" criado por Guilerme Moreira Ribeiro Barciki, aluno da Apple Developer Academy - PUCPR, e pedido especialmente para este projeto. Foi cedido permissão para editar e criar outros trabalhos derivados.

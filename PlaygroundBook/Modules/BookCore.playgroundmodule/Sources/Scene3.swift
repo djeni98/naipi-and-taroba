@@ -25,7 +25,7 @@ public class Scene3: PreScene {
     }
     
     func setupTake3() {
-        let text = setupText(texts: [("But Naipi met Tarobá, and they fell in love.", 1)])
+        let text = setupText(texts: [("Mas Naipi conheceu Tarobá, e eles se apaixonaram.", 1)])
         text.position = CGPoint(x: self.size.width / 2, y: self.size.height - 200)
 
         self.addChild(text)
@@ -112,7 +112,7 @@ public class Scene3: PreScene {
         balloon.setScale(0.5)
 
         let infoText = setupParagraph(
-            text: "Tarobá was a young warrior of the tribe.",
+            text: "Tarobá era um jovem guerreiro da tribo.",
             font: self.infoFont, fontSize: 30
         )
         infoText.zPosition = UI_ZPOSITION + 4
