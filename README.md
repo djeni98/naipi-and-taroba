@@ -3,19 +3,23 @@
 
 ![Naipi e Tarobá](poster.png)
 
-Este é um playground book em swift feito por Djenifer Renata Pereira e submetido ao WWDC21 Swift Challenge. Você pode ver o vídeo sobre o playgrounds no [youtube](https://youtu.be/NP4XIpNLOc4).
+Este é um playground book em swift feito por Djenifer Renata Pereira e submetido ao WWDC21 Swift Challenge. Você pode ver o vídeo sobre o playgrounds no [youtube](https://youtu.be/NP4XIpNLOc4) (os textos estão em inglês).
 
 Se quiser, você pode mudar para a versão em inglês trocando a branch do repositório para **master**.
 
 ## Sobre a lenda
 
- Essa é uma história indígena brasileira, da tribo Kaingang.
- Ela é ensinada nas escolas do Paraná, um estado do sul do Brasil, mas não é bem conhecida mesma nessa região.
+Essa é uma história indígena brasileira, da tribo Kaingang.
+Ela é ensinada nas escolas do Paraná, um estado do sul do Brasil, mas não é bem conhecida mesma nessa região.
 
- > A tribo Kaingang é mais numerosa na parte sul do Brasil.
+> A tribo Kaingang é mais numerosa na parte sul do Brasil.
 
- A fim de espalhar a cultura brasileira e seu folclore,
- esse livro playground traz uma animação interativa contanto essa história.
+A fim de espalhar a cultura brasileira e seu folclore,
+esse livro playground traz uma animação interativa contanto essa história.
+
+## Instalação
+
+Baixe o arquivo "NaipiETaroba.playgroundbook.zip" e o abra com o Swift Playgrounds 3.4 ou acima para macOS.
 
 ## Créditos e Atribuições
 
