@@ -1,7 +1,11 @@
 # Naipi and Tarobá
 **Legend of Iguazu Falls**
 
-This is a swift playground book created by Djenifer Renata Pereira and submitted to WWDC21 Swift Challenge.
+![Naipi and Tarobá](poster.png)
+
+This is a swift playground book created by Djenifer Renata Pereira and submitted to WWDC21 Swift Challenge. You can see a video preview on [youtube](https://youtu.be/NP4XIpNLOc4).
+
+If you want, you can change to portuguese version by changing the repo branch to **pt-version**.
 
 ## About the legend
 
@@ -12,6 +16,10 @@ It is taught in schools in Paraná, a state of southern Brazil, but it is not we
 
 In order to spread Brazilian culture and its folklore,
 this playground book brings an interactive animation telling this story.
+
+## Instalation
+
+Download the zipped file "NaipiAndTaroba.playgroundbook.zip" and open it using Swift Playgrounds 3.4 or above for macOS.
 
 ## Credits and Attributions
 
